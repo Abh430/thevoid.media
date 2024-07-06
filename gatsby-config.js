@@ -88,13 +88,12 @@ module.exports = {
         icon: `src/images/3D-liquid-abstract-5.webp`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: "gatsby-plugin-decap-cms",
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
-    },
-    `gatsby-plugin-netlify`,
+    // {
+    //   resolve: "gatsby-plugin-decap-cms",
+    //   options: {
+    //     modulePath: `${__dirname}/src/cms/cms.js`,
+    //   },
+    // },
     `gatsby-plugin-gatsby-cloud`,
     "gatsby-plugin-postcss",
     // this (optional) plugin enables Progressive Web App + Offline functionality

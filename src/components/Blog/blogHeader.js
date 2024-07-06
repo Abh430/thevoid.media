@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import React from "react"
-import Fade from "react-reveal/Fade"
+import { Fade } from "react-awesome-reveal"
 
 const BlogHeader = ({ post }) => {
   const image = getImage(post.node.frontmatter.featuredimage)

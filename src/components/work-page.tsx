@@ -1,5 +1,5 @@
 import React from "react"
-import Fade from "react-reveal/Fade"
+import { Fade } from "react-awesome-reveal"
 
 import HeroImage from "../images/3D-liquid-abstract-2.webp"
 import BackGroud from "../images/holographic-background.webp"

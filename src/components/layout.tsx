@@ -9,12 +9,17 @@ import * as React from "react"
 import Footer from "./footer"
 import Navbar from "./navbar"
 
-const Layout = ({ children }) => {
+interface LayoutProps {
+  children: React.ReactNode
+  hasFooter?: boolean
+}
+
+const Layout = ({children, hasFooter = true}: LayoutProps) => {
   return (
     <div>
       <Navbar></Navbar>
       {children}
-      <Footer></Footer>
+      {hasFooter && <Footer></Footer>}
     </div>
   )
 }

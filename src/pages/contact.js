@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import Input from "../components/Atoms/input"
 import Button from "../components/Atoms/button"
-import Fade from "react-reveal/Fade"
+import {Fade} from "react-awesome-reveal"
 import Seo from "../components/seo"
 
 import image from "../images/holographic-background.webp"
