@@ -1,0 +1,49 @@
+{
+  "name": "the-void-media",
+  "description": "The Void Media -- Official website",
+  "version": "1.0.0",
+  "author": "Andrew Hunter <andrew@thevoid.media>",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.2",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@loadable/component": "^5.16.4",
+    "dotenv": "^16.4.5",
+    "figlet": "^1.7.0",
+    "gatsby": "^5.13.6",
+    "gatsby-image": "^3.11.0",
+    "gatsby-plugin-image": "^3.13.1",
+    "gatsby-plugin-manifest": "^5.13.1",
+    "gatsby-plugin-offline": "^6.13.2",
+    "gatsby-plugin-sass": "^6.13.1",
+    "gatsby-plugin-sharp": "^5.13.1",
+    "gatsby-source-filesystem": "^5.13.1",
+    "gatsby-source-google-calendar": "^1.1.3",
+    "gatsby-transformer-sharp": "^5.13.1",
+    "moment": "^2.30.1",
+    "prop-types": "^15.8.1",
+    "react-dom": "^18.3.1",
+    "react-modal": "^3.16.1",
+    "react-youtube-background": "^1.0.0",
+    "sass": "^1.77.6"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-starter",
+    "gatsby-starter-portfolio",
+    "lekoarts",
+    "prismic"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "dev": "gatsby develop -o",
+    "build": "gatsby build",
+    "lint": "eslint . --ext .js,.jsx --ignore-path .gitignore",
+    "lint:fix": "eslint . --ext .js,.jsx --fix --ignore-path .gitignore"
+  },
+  "devDependencies": {
+    "prettier": "3.3.2"
+  }
+}
