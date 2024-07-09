@@ -1,9 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Holo - Gatsby Starter`,
+    title: `The Void`,
     description: `Holo is a visually striking and highly customizable open source theme built on the powerful Gatsby framework and integrated with the versatile Decap CMS`,
-    siteUrl: "https://holo-theme.netlify.app/",
-    author: `Travis Lord <hi@travislord.xyz>`,
+    siteUrl: "https://thevoid.media/",
+    image: `/fe-cover.jpg`,
+    icon: `/icon.png`,
+    author: `Andrew Hunter <andrew@thevoid.media>`,
   },
   plugins: [
     `gatsby-plugin-image`,

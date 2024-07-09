@@ -17,8 +17,6 @@ const About = () => {
       ></Seo>
       <AboutHeader></AboutHeader>
       <AboutPage></AboutPage>
-      <AboutGrid></AboutGrid>
-      <AboutExtra></AboutExtra>
     </Layout>
   )
 }

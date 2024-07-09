@@ -16,7 +16,7 @@ interface LayoutProps {
 
 const Layout = ({children, hasFooter = true}: LayoutProps) => {
   return (
-    <div>
+    <div className="bg-zinc-900	">
       <Navbar></Navbar>
       {children}
       {hasFooter && <Footer></Footer>}

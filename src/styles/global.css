@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@include colors;
 
 
 p, input, textarea {
@@ -24,7 +25,7 @@ a {
     color: white;
   }
   body {
-    background-color: hsla(243, 60%, 95%, 1);
+    background-color: #18181b;
   }
 }
 
@@ -48,7 +49,7 @@ body {
 .pb-3 {padding-bottom: 0.75rem; display: flex; flex-direction: column; align-items: center;}
 
 /* Footer background colour */
-.footer.max-w-7xl.mx-auto.p-20.mt-10.rounded-xl {background: linear-gradient(90deg, #796a99, #554970);}
+/* .footer.max-w-7xl.mx-auto.p-20.mt-10.rounded-xl {background: linear-gradient(90deg, #796a99, #554970);} */
 
 /* mobile dropdown background */
 .md\:hidden {background-color: hsla(243, 60%, 95%, 1); border-radius: 0px 0px 10px 10px;}
