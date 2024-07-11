@@ -2,10 +2,10 @@ import React from "react"
 import { Fade } from "react-awesome-reveal"
 
 // Assets
-import HeroImage from "../../images/holographic-background-1.webp"
-import Image1 from "../../images/3D-liquid-abstract-1.webp"
-import Image2 from "../../images/3D-liquid-abstract.webp"
-import Image3 from "../../images/3D-liquid-abstract-3.webp"
+// import HeroImage from "../../images/holographic-background-1.webp"
+// import Image1 from "../../images/3D-liquid-abstract-1.webp"
+// import Image2 from "../../images/3D-liquid-abstract.webp"
+// import Image3 from "../../images/3D-liquid-abstract-3.webp"
 
 const FeatureSection = () => {
   return (
@@ -35,11 +35,11 @@ const FeatureSection = () => {
       <div className="max-w-7xl mx-auto lg:px-8 md:px-3">
         <div className="mx-auto max-w-7xl px-4 sm:mt-10 sm:px-6 md:mt-10 lg:mt-10 lg:px-0 xl:mt-10 flex flex-col lg:flex-row gap-3 lg:flex-justify">
           <div className="lg:w-1/2 my-4">
-            <img
+            {/* <img
               className="rounded-xl h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
               src={HeroImage}
               alt="HeroImage"
-            ></img>
+            ></img> */}
           </div>
 
           <div className="lg:w-1/2 sm:text-center lg:text-right flex flex-col justify-center">
@@ -188,13 +188,13 @@ const FeatureSection = () => {
       <Fade bottom cascade>
         <div className="grid grid-cols-3 mt-10 gap-4 xxs:grid-cols-1 lg:grid-cols-3 px-5">
           <div className="rounded-xl overflow-hidden relative hover:opacity-100 flex justify-center">
-            <img alt="Image" src={Image1}></img>
+            {/* <img alt="Image" src={Image1}></img> */}
           </div>
           <div className="rounded-xl overflow-hidden relative hover:opacity-100 flex justify-center">
-            <img alt="Image" src={Image2}></img>
+            {/* <img alt="Image" src={Image2}></img> */}
           </div>
           <div className="rounded-xl overflow-hidden relative hover:opacity-100 hidden lg:block ">
-            <img alt="Image" src={Image3}></img>
+            {/* <img alt="Image" src={Image3}></img> */}
           </div>
         </div>
       </Fade>

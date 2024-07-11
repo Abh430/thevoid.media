@@ -1,8 +1,8 @@
 import React from "react"
 import Fade from "react-reveal/Fade"
 
-import HeroImage from "../images/3D-liquid-abstract-2.webp"
-import BackGroud from "../images/holographic-background.webp"
+// import HeroImage from "../images/3D-liquid-abstract-2.webp"
+// import BackGroud from "../images/holographic-background.webp"
 
 const Gallery = () => {
   return (
@@ -24,7 +24,7 @@ const Gallery = () => {
             </p>
           </div>
           <div className="rounded-xl w-auto h-full object-cover flex justify-center">
-            <img src={HeroImage} alt="HeroImage"></img>
+            {/* <img src={HeroImage} alt="HeroImage"></img> */}
           </div>
         </div>
       </Fade>
@@ -36,12 +36,12 @@ const Gallery = () => {
               href="#"
               className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 md:h-80"
             >
-              <img
+              {/* <img
                 src={BackGroud}
                 loading="lazy"
                 alt="HeroImage"
                 className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
-              />
+              /> */}
 
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50"></div>
 
