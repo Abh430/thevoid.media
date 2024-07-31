@@ -1,0 +1,31 @@
+{
+  "title": "Web Development",
+  "position": ["UX Developer", "Full Stack Engineer"],
+  "content": "I've been creating websites for a living for over a decade",
+  "sections": [
+    {
+      "title": "Project Overview",
+      "content": "Synesthesia is a music player that visualizes music in a 3D space. The user can explore the music in a 3D environment and interact with the music in a way that is not possible with traditional music players.",
+      "images": [
+
+      ]
+    },
+    {
+      "title": "Technologies",
+      "content": "Synesthesia is built with React, Three.js, and Web Audio API.",
+      "images": [
+        "/img/synesthesia/editor/editor-overview.jpg",
+        "/img/synesthesia/editor/editor-configuration-panel.jpg",
+        "/img/synesthesia/editor/editor-advanced-options.jpg",
+        "/img/synesthesia/editor/editor-side-by-side-view.jpg"
+      ]
+    }
+  ],
+  "featuredImage": {
+    "src": "/img/synesthesia/mediaplayer.jpg",
+    "alt": "Featured image"
+  },
+  "slug": "/work/venturefizz",
+  "externalLink": "https://venturefizz.com/"
+
+}

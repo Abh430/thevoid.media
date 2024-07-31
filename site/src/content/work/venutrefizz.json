@@ -1,0 +1,28 @@
+{
+  "title": "Venturefizz",
+  "position": ["Full Stack Engineer", "UX Developer"],
+  "order": 2,
+  "startDate": "2018",
+  "endDate": "2019",
+  "content": "I worked freelance with Venturefizz for over a year and overhauled the entire site",
+  "sections": [
+    {
+      "title": "Website Overhaul",
+      "content": "I redid every single page of this drupal site",
+      "images": [
+        "/img/venturefizz/venturefizz-home.jpg",
+        "/img/venturefizz/venturefizz-search-UI-advanced.jpg",
+        "/img/venturefizz/venturefizz-page-search.jpg",
+        "/img/venturefizz/venturefizz-video-detail.jpg",
+        "/img/venturefizz/venturefizz-companies.jpg"
+      ]
+    }
+  ],
+  "featuredImage": {
+    "src": "/img/venturefizz/venturefizz-home.jpg",
+    "alt": "Featured image"
+  },
+  "slug": "/work/venturefizz",
+  "externalLink": "https://venturefizz.com/"
+
+}

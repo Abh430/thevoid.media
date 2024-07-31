@@ -41,6 +41,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -90,13 +91,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Holo - Gatsby Starter Theme`,
-        short_name: `Holo`,
+        name: `Andrew Hunter aka The Void`,
+        short_name: `The Void`,
         start_url: `/`,
         background_color: `#ebebfa`,
         theme_color: `#ebebfa`,
         display: `standalone`,
-        icon: `src/images/3D-liquid-abstract-5.webp`, // This path is relative to the root of the site.
+        icon: `src/images/void-icon.png`, // This path is relative to the root of the site.
       },
     },
     // {

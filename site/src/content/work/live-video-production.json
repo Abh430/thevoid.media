@@ -1,0 +1,35 @@
+{
+  "title": "Live Video Production",
+  "position": ["Visual Coordinator", "Visual Lead", "Live Video Artist"],
+  "order": 1,
+  "startDate": "2017",
+  "endDate": "present",
+  "content": "Ive worked in the live music industry for 7+ years, managing small to large teams of creatives",
+  "sections": [
+    {
+      "title": "Visual Team Lead",
+      "content": "I have selected and managed teams of creatives to produce live visuals for music festivals and concerts. This includes coordinating budgets and scheduling with ownership as well as building and executing technical requirements based on stage production.",
+      
+      "images": [
+
+      ]
+    },
+    {
+      "title": "Live Video Artistry",
+      "content": "Leveraging multiple cutting edge technologies to produce live video on the spot, I have performed on stages across the country to crowds of all sizes. Some of the most notable venues ive performed at include: Red Rocks Ampitheater (Colorado), The Mirage (NYC), Spirit of Suwannee Music Park (Florida),  Kings Theater (NYC), Saenger Theater (NOLA), and many more.",
+      "images": [
+        "/img/synesthesia/editor/editor-overview.jpg",
+        "/img/synesthesia/editor/editor-configuration-panel.jpg",
+        "/img/synesthesia/editor/editor-advanced-options.jpg",
+        "/img/synesthesia/editor/editor-side-by-side-view.jpg"
+      ]
+    }
+  ],
+  "featuredImage": {
+    "src": "/img/synesthesia/mediaplayer.jpg",
+    "alt": "Featured image"
+  },
+  "slug": "/work/live-video-production",
+  "externalLink": "https://venturefizz.com/"
+
+}
