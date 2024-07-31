@@ -3,7 +3,7 @@ import { Fade } from "react-awesome-reveal"
 
 const AboutPage = () => {
   return (
-    <div className="max-w-7xl mx-auto mt-10">
+    <div id="about" className="max-w-7xl mx-auto mt-10">
       
         <div className="mt-10  flex flex-row justify-space xxs:flex-col xs:flex-col sm:flex-row content-center justify-center align-middle text-center">
           
@@ -15,7 +15,7 @@ const AboutPage = () => {
         </Fade>
         <Fade cascade>
           <h3 className="text-black text-3xl font-bold xxs:text-2xl xs:text-3xl text-gradient bg-gradient-to-r from-pink-800 to-purple-700">
-            The Void
+            Andrew Hunter aka The Void
           </h3>
         </Fade>
         <Fade cascade>

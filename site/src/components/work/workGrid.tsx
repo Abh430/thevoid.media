@@ -1,39 +1,34 @@
 import React from "react"
 import { Fade } from "react-awesome-reveal"
 
+// Types
+import { WorkItem } from "./workData"
 
-const WorkGrid = ({ projects }) => {
+interface WorkGridProps {
+  workItems: WorkItem[];
+}
+
+const WorkGrid = ({ workItems }: WorkGridProps) => {
+  console.log(workItems);
+  
   return (
-    <div className="grid grid-cols-3 grid-flow-row gap-4">
-          <div className="col-span-2 h-20 bg-gradient-to-br from-purple-500 to-cyan-500">
+    <div className="grid-cols-3 grid-flow-row gap-4">
+      {
+        workItems.map((workItem, index) => {
+          return (
             <Fade cascade>
-              <div className="">
-                
-              </div>
+              <a className="" data-href={workItem.slug} >
+                <div key={index} className={`col-span-3 bg-center h-60 from-purple-500 to-cyan-500`} style={{backgroundImage: `url(${workItem.featuredImage.src})`}}>
+                  <span>{workItem.title}</span>
+                  <span>{workItem.position[0]}</span>
+                  <span>{workItem.content}</span>
+                </div>
+              </a>
             </Fade>
-          </div>
-          <div className="col-span-1 h-20 bg-gradient-to-br from-purple-500 to-cyan-500">
-            <Fade cascade>
-              <div className="">
-                
-              </div>
-            </Fade>
-          </div>
-          <div className="col-span h-20 bg-gradient-to-br from-purple-500 to-cyan-500">
-            <Fade cascade>
-              <div className="">
-                
-              </div>
-            </Fade>
-          </div>
-          <div className="col-span-2 h-20 bg-gradient-to-br from-purple-500 to-cyan-500">
-            <Fade cascade>
-              <div className="">
-                
-              </div>
-            </Fade>
-          </div>
-        </div>
+          )
+        })
+      }
+    </div>
   )
 }
 

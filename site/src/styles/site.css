@@ -1,0 +1,10 @@
+.active-scroll-spy {
+  font-weight: bolder;
+}
+
+.active-scroll-spy:before {
+  content: "•";
+  position: absolute;
+  top: 0;
+  left: -20px;
+}

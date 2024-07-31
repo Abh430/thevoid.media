@@ -10,7 +10,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 // Components
 const ContactPage = () => {
   return (
-    <div className="max-w-7xl mx-auto mt-10">
+    <div id="contact" className="max-w-7xl mx-auto mt-10">
       <div className="mt-10 px-8">
         <Fade cascade>
           <h2 className="text-zinc-50 py-2 text-2xl font-semibold">CONTACT</h2>

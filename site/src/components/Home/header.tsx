@@ -9,25 +9,23 @@ interface HeaderColumnProps {
 
 const HeaderColumn = ({activeItem, scrollPos}: HeaderColumnProps) => {
   return (
-   
-        <header className="lg:sticky lg:top-0 mx-auto w-1/3 px-4 sm:px-6 lg:px-0 xl:pt-28 flex gap-10 lg:flex-start lg:flex flex-col max-h-screen">
-          <div className="text-center lg:text-left  justify-center">
-
-            <Fade duration={2200}>
-              <StaticImage style={{
-                    // gridArea: "1/1",
-                    // maxHeight: 600,
-                    width: '200px'
-                  }}
-                  className="background-image"
-                  src="../../images/void-combo-logo.png" 
-                  layout="fullWidth"
-                  formats={["auto", "webp", "avif"]}
-                  alt="Forward Escape" />
-              <h1 className="text-zinc-100 text-4xl font-semibold opacity-70">
+        <header className="lg:sticky lg:top-0 mx-auto w-2/12 px-4 sm:px-6 lg:px-0 lg:pt-12 flex gap-10 flex-col align-middle max-h-screen">
+          <div className="text-center lg:text-left flex justify-center">
+              <a href="/">
+                <StaticImage style={{
+                      // gridArea: "1/1",
+                      // maxHeight: 600,
+                      width: '200px'
+                    }}
+                    className=""
+                    src="../../images/void-combo-logo.png" 
+                    layout="fullWidth"
+                    formats={["auto", "webp", "avif"]}
+                    alt="The Void Logo" />
+              </a>
+              <h1 className="text-zinc-100 sr-only font-semibold">
                 THE VOID
               </h1>
-            </Fade>
 
             <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
               
@@ -40,7 +38,17 @@ const HeaderColumn = ({activeItem, scrollPos}: HeaderColumnProps) => {
               src={hero}
               alt=""
             ></img> */}
-            
+            <ul>
+              <li className="relative">
+                <a href="#about" data-to-scrollspy-id="about">ABOUT</a>
+              </li>
+              <li className="relative">
+                <a href="#work" data-to-scrollspy-id="work">WORK</a>
+              </li>
+              <li className="relative">
+                <a href="#contact" data-to-scrollspy-id="contact">CONTACT</a>
+              </li>
+            </ul>
           </div>
         </header>
     
