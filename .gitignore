@@ -56,9 +56,11 @@ typings/
 
 # gatsby files
 site/.cache/**
-site/.cache
+.cache/
+.cache
 site/public/**
-site/public
+public/
+public
 # Mac files
 .DS_Store
 
