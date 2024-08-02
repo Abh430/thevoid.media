@@ -1,6 +1,7 @@
 import React from "react"
 import {Fade} from "react-awesome-reveal"
 import { StaticImage } from "gatsby-plugin-image"
+import { navigate } from 'gatsby';
 
 interface HeaderColumnProps {
   activeItem?: string

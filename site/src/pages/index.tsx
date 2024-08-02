@@ -12,7 +12,6 @@ const IndexPage = () => (
 
   <div className="min-h-screen w-screen">
     <Layout hasFooter={false} hasNav={false}>
-      
         <div className="max-w-7xl mx-auto lg:px-6 md:px-3 relative box-border flex flex-row gap-7 justify-between">
           <Header />
           <Body />

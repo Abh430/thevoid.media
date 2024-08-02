@@ -4,14 +4,17 @@ export interface WorkItem {
   title: string
   content: string
   position: string[]
+  order: number
+  startDate: string
+  endDate: string
   slug: string
-  externalLink: string
+  externalLink?: string
   sections: WorkSection[]
-  featuredImage: FeaturedImage
+  featuredImage: Image
   colSpan?: number
 }
 
-export interface FeaturedImage {
+export interface Image {
   src: string
   alt: string
 }
@@ -19,9 +22,9 @@ export interface FeaturedImage {
 export interface WorkSection {
   title: string
   content: string
-  images: string[]
+  images: Image[]
 }
-//TODO: Add types for the data returned from the query
+
 export function getWorkPageData(){
   const data = useStaticQuery(graphql`
     query MyQuery {
@@ -42,11 +45,14 @@ export function getWorkPageData(){
               src
               alt
             }
+            order
+            endDate
+            startDate
           }
         }
       }
-    }
+      }
   `)
-    
-  return data.allWorkJson.edges.map((edge: any) => edge.node)
+  const work = data.allWorkJson.edges.map((edge: any) => edge.node).sort((a: WorkItem, b: WorkItem) => a.order - b.order);
+  return work;
 }

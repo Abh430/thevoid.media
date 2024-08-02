@@ -1,7 +1,7 @@
 import React from "react"
 import { Fade } from "react-awesome-reveal"
 
-const WorkPage = () => {
+const AboutPage = () => {
   return (
     <div className="max-w-7xl mx-auto mt-10">
       {/* <Fade duration={2200}>
@@ -64,4 +64,4 @@ const WorkPage = () => {
   )
 }
 
-export default WorkPage
+export default AboutPage
