@@ -8,27 +8,99 @@
   "sections": [
     {
       "title": "Project Overview",
-      "content": "Synesthesia is a music player that visualizes music in a 3D space. The user can explore the music in a 3D environment and interact with the music in a way that is not possible with traditional music players.",
-      "images": [
+      "content": "Synesthesia is a music player that visualizes music in a 3D space. The user can explore the music in a 3D environment and interact with the music in a way that is not possible with traditional music players."
 
+    },
+    {
+      "title": "Built-in Editor",
+      "content": "Synesthesia is built with React, Three.js, and Web Audio API.",
+      "columns": 1,
+      "images": [
+        {
+          "src": "../../images/synesthesia/editor/editor-overview.jpg",
+          "alt": "Editor overview"
+        },
+        {
+          "src": "../../images/synesthesia/editor/editor-advanced-options.jpg",
+          "alt": "Advanced options"
+        },
+        {
+          "src": "../../images/synesthesia/editor/editor-side-by-side-view.jpg",
+          "alt": "Side by side view"
+        },
+        {
+          "src": "../../images/synesthesia/editor/editor-configuration-panel.jpg",
+          "alt": "Configuration panel"
+        }
       ]
     },
     {
-      "title": "Technologies",
-      "content": "Synesthesia is built with React, Three.js, and Web Audio API.",
+      "title": "Marketplace",
+      "content": "I helped design and build the majority of the in-app marketplace. Additionally I oversaw its growth and managed the artists and developers that contributed their works for sale.",
+      "columns": 1,
       "images": [
-        "/img/synesthesia/editor/editor-overview.jpg",
-        "/img/synesthesia/editor/editor-configuration-panel.jpg",
-        "/img/synesthesia/editor/editor-advanced-options.jpg",
-        "/img/synesthesia/editor/editor-side-by-side-view.jpg"
+        {
+          "src": "../../images/synesthesia/marketplace/marketplace-homepage.jpg",
+          "alt": "Marketplace Homepage"
+        },
+        {
+          "src": "../../images/synesthesia/marketplace/marketplace-browse.jpg",
+          "alt": "Marketplace Browse Page"
+        },
+        {
+          "src": "../../images/synesthesia/marketplace/marketplace-preview-side-by-side.jpg",
+          "alt": "Marketplace Built in app scene preview side by side"
+        }
+      ]
+    },
+    {
+      "title": "Media Player",
+      "content": "I helped design and build the majority of the in-app marketplace. Additionally I oversaw its growth and managed the artists and developers that contributed their works for sale.",
+      "images": [
+        {
+          "src": "../../images/synesthesia/mediaplayer.jpg",
+          "alt": "Media player panel"
+        }
+      ]
+    },
+    {
+      "title": "Playlist",
+      "content": "I helped design and build the majority of the in-app marketplace. Additionally I oversaw its growth and managed the artists and developers that contributed their works for sale.",
+      "columns": 2,
+      "images": [
+        {
+          "src": "../../images/synesthesia/playlist/playlist-grid-perform.jpg",
+          "alt": "Playlist Panel Grid View"
+        },
+        {
+          "src": "../../images/synesthesia/playlist/playlist-grid-edit.jpg",
+          "alt": "Playlist Panel Grid Edit View"
+        },
+        {
+          "src": "../../images/synesthesia/playlist/playlist-list-perform.jpg",
+          "alt": "Playlist Panel List View"
+        }
+      ]
+    },
+    {
+      "title": "Scene Work",
+      "content": "Ive made a lot of scenes for Synesthesia and its marketplace that leverage GLSL and Javascript for realtime visuals.",
+      "columns": 1,
+      "images": [
+        {
+          "src": "../../images/synesthesia/scene-work/flow-machine-code-sample.jpg",
+          "alt": "Playlist Panel Grid View"
+        },
+        {
+          "src": "../../images/synesthesia/scene-work/flow-machine-controls.jpg",
+          "alt": "Playlist Panel Grid Edit View"
+        }
       ]
     }
   ],
   "featuredImage": {
-    "src": "/img/synesthesia/mediaplayer.jpg",
+    "src": "../../images/synesthesia/mediaplayer.jpg",
     "alt": "Featured image"
   },
-  "slug": "/work/synesthesia",
   "externalLink": "https://synesthesia.live"
-
 }

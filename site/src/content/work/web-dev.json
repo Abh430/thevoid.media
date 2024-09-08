@@ -8,27 +8,102 @@
   "sections": [
     {
       "title": "Project Overview",
-      "content": "Synesthesia is a music player that visualizes music in a 3D space. The user can explore the music in a 3D environment and interact with the music in a way that is not possible with traditional music players.",
-      "images": [
-
+      "content": "Ive developed a number of large reputable websites from scratch."
+    },
+    {
+      "title": "Recent Marketing Site Work",
+      "content": "Micro marketing sites created for various purposes.",
+      "columns": 1,
+      "images" : [
+        {
+          "src": "../../images/webdev/tippermusic.jpg",
+          "alt": "Venturefizz.com Home page"
+        },
+        {
+          "src": "../../images/webdev/rendezvous.jpg",
+          "alt": "Venturefizz.com Home page"
+        },
+        {
+          "src": "../../images/webdev/rendezvous-gallery.jpg",
+          "alt": "Venturefizz.com Home page"
+        }
       ]
     },
     {
-      "title": "Technologies",
-      "content": "Synesthesia is built with React, Three.js, and Web Audio API.",
-      "images": [
-        "/img/synesthesia/editor/editor-overview.jpg",
-        "/img/synesthesia/editor/editor-configuration-panel.jpg",
-        "/img/synesthesia/editor/editor-advanced-options.jpg",
-        "/img/synesthesia/editor/editor-side-by-side-view.jpg"
+      "title": "Rupie.io",
+      "content": "Aniamted with greensock .",
+      "columns": 1,
+      "images" : [
+        {
+          "src": "../../images/webdev/rupie1.jpg",
+          "alt": "Venturefizz.com Home page"
+        },
+        {
+          "src": "../../images/webdev/rupie2.jpg",
+          "alt": "Venturefizz.com Home page"
+        }
+      ]
+    },
+    {
+      "title": "Houghton Intl",
+      "content": "A large chemical manufacturer website based on drupal that was translated into over a dozen different languages.",
+      "columns": 1,
+      "images" : [
+        {
+          "src": "../../images/webdev/houghton1.jpg",
+          "alt": "Venturefizz.com Home page"
+        },
+        {
+          "src": "../../images/webdev/houghton2.jpg",
+          "alt": "Venturefizz.com Home page"
+        },
+        {
+          "src": "../../images/webdev/houghton3.jpg",
+          "alt": "Venturefizz.com Home page"
+        }
+      ]
+    },
+    {
+      "title": "Preit",
+      "content": "A commercial real-estate company focusing on shopping mall properties.",
+      "columns": 1,
+      "images" : [
+        {
+          "src": "../../images/webdev/preit1.jpg",
+          "alt": "Venturefizz.com Home page"
+        },
+        {
+          "src": "../../images/webdev/preit2.jpg",
+          "alt": "Venturefizz.com Home page"
+        },
+        {
+          "src": "../../images/webdev/preit3.jpg",
+          "alt": "Venturefizz.com Home page"
+        },
+        {
+          "src": "../../images/webdev/preit4.jpg",
+          "alt": "Venturefizz.com Home page"
+        }
+      ]
+    },
+    {
+      "title": "SEIC",
+      "content": "Investment capital website.",
+      "columns": 1,
+      "images" : [
+        {
+          "src": "../../images/webdev/seic1.jpg",
+          "alt": "Venturefizz.com Home page"
+        },
+        {
+          "src": "../../images/webdev/seic2.jpg",
+          "alt": "Venturefizz.com Home page"
+        }
       ]
     }
   ],
   "featuredImage": {
-    "src": "/img/synesthesia/mediaplayer.jpg",
+    "src": "../../images/synesthesia/mediaplayer.jpg",
     "alt": "Featured image"
-  },
-  "slug": "/work/venturefizz",
-  "externalLink": "https://venturefizz.com/"
-
+  }
 }
