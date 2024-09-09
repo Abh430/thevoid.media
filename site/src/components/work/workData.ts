@@ -1,4 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby"
+//import gatsby image types
+//import { GatsbyImage } from "gatsby-plugin-image"
+
 
 export interface WorkItem {
   title: string
@@ -15,7 +18,7 @@ export interface WorkItem {
 }
 
 export interface Image {
-  src: string
+  src: any
   alt: string
 }
 
@@ -23,6 +26,7 @@ export interface WorkSection {
   title: string
   content: string
   images: Image[]
+  columns?: number
 }
 
 export function getWorkPageData(){
@@ -35,14 +39,34 @@ export function getWorkPageData(){
             externalLink
             sections {
               content
-              images
+              columns
               title
+              images {
+                src {
+                  childImageSharp {
+                    gatsbyImageData(
+                    placeholder: BLURRED, 
+                    formats: AUTO,
+                    width: 800,
+                    height: 800,)
+                  }
+                }
+                alt
+              }
             }
             position
             slug
             title
             featuredImage {
-              src
+              src {
+                childImageSharp {
+                  gatsbyImageData(
+                  placeholder: BLURRED, 
+                  formats: AUTO,
+                  width: 800,
+                  height: 800,)
+                }
+              }
               alt
             }
             order

@@ -9,24 +9,52 @@
     {
       "title": "Visual Team Lead",
       "content": "I have selected and managed teams of creatives to produce live visuals for music festivals and concerts. This includes coordinating budgets and scheduling with ownership as well as building and executing technical requirements based on stage production.",
-      
       "images": [
-
+        {
+          "src": "../../images/live-video/suwannee.jpg",
+          "alt": "Venturefizz.com Home page"
+        },
+        {
+          "src": "../../images/live-video/orion.jpg",
+          "alt": "Venturefizz.com Home page"
+        }
       ]
     },
     {
       "title": "Live Video Artistry",
-      "content": "Leveraging multiple cutting edge technologies to produce live video on the spot, I have performed on stages across the country to crowds of all sizes. Some of the most notable venues ive performed at include: Red Rocks Ampitheater (Colorado), The Mirage (NYC), Spirit of Suwannee Music Park (Florida),  Kings Theater (NYC), Saenger Theater (NOLA), and many more.",
+      "content": "Leveraging multiple cutting edge technologies to produce live video on the spot, I have performed on stages across the country to crowds of all sizes. Some of the most notable venues ive performed at include: Red Rocks Ampitheater (Colorado), The Mirage (NYC), Spirit of Suwannee Music Park (Florida),  Kings Theater (NYC), Saenger Theater (NOLA), the Orion Ampitheater (Alabama), and many more.",
+      "columns": 1,
       "images": [
-        "/img/synesthesia/editor/editor-overview.jpg",
-        "/img/synesthesia/editor/editor-configuration-panel.jpg",
-        "/img/synesthesia/editor/editor-advanced-options.jpg",
-        "/img/synesthesia/editor/editor-side-by-side-view.jpg"
+        {
+          "src": "../../images/live-video/kings-theater.jpg",
+          "alt": "Venturefizz.com Home page"
+        },
+        {
+          "src": "../../images/live-video/suwannee2.png",
+          "alt": "Venturefizz.com Home page"
+        },
+        {
+          "src": "../../images/live-video/mirage.png",
+          "alt": "Venturefizz.com Home page"
+        },
+        {
+          "src": "../../images/live-video/avl.jpg",
+          "alt": "Venturefizz.com Home page"
+        },
+        {
+          "src": "../../images/live-video/suwannee3.png",
+          "alt": "Venturefizz.com Home page"
+        },
+        {
+          "src": "../../images/live-video/mirage2.png",
+          "alt": "Venturefizz.com Home page"
+        }
       ]
+
     }
   ],
   "featuredImage": {
-    "src": "/img/synesthesia/mediaplayer.jpg",
+    "src": "../../images/synesthesia/mediaplayer.jpg",
     "alt": "Featured image"
   },
   "slug": "/work/live-video-production"

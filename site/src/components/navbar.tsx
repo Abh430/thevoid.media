@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false)
@@ -12,6 +13,17 @@ const Navbar = () => {
               className="text-white flex-shrink-0 font-montserrat font-semibold"
               href="/"
             >
+              <StaticImage style={{
+                      // gridArea: "1/1",
+                      // maxHeight: 600,
+                      width: '200px'
+                    }}
+                    className=""
+                    src="../images/void-combo-logo.png" 
+                    layout="fullWidth"
+                    formats={["auto", "webp", "avif"]}
+                    alt="The Void Logo" />
+
               <span className="text-gradient bg-gradient-to-r from-pink to-purple font-semibold">
                 THE VOID
               </span>

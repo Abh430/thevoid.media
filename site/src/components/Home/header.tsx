@@ -19,7 +19,7 @@ const HeaderColumn = ({activeItem, scrollPos}: HeaderColumnProps) => {
                       width: '200px'
                     }}
                     className=""
-                    src="../../images/void-combo-logo.png" 
+                    src="../../images/void-combo-logo-stacked.png" 
                     layout="fullWidth"
                     formats={["auto", "webp", "avif"]}
                     alt="The Void Logo" />

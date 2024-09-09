@@ -3,9 +3,9 @@ import React from "react"
 
 const Footer = () => {
   return (
-    <div className="m-4">
+    <div className="m-4 border-t">
       <div className="max-w-7xl mx-auto mt-10 h-auto lg:mb-8 sm:mb-4 xs:mb-4 xxs:mb-4">
-        <div className="footer p-10 mt-10 rounded-xl">
+        <div className="footer pt-4 mt-4 rounded-xl">
           <div className="grid grid-cols-2 xxs:grid-cols-1 lg:grid-cols-2">
             <div className="self-center xxs:hidden lg:block">
               <ul className="text-xl text-zinc-400 font-montserrat font-medium">
@@ -17,6 +17,9 @@ const Footer = () => {
                 </li>
                 {/* <li>
                   <Link to="/blog">Blog</Link>
+                </li> */}
+                {/* <li>
+                  <Link to="/blog">Store</Link>
                 </li> */}
                 <li>
                   <Link to="/contact">Contact</Link>

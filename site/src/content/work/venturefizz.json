@@ -10,16 +10,28 @@
       "title": "Website Overhaul",
       "content": "I redid every single page of this drupal site",
       "images": [
-        "/img/venturefizz/venturefizz-home.jpg",
-        "/img/venturefizz/venturefizz-search-UI-advanced.jpg",
-        "/img/venturefizz/venturefizz-page-search.jpg",
-        "/img/venturefizz/venturefizz-video-detail.jpg",
-        "/img/venturefizz/venturefizz-companies.jpg"
+        {
+          "src": "../../images/venturefizz/venturefizz-home.jpg",
+          "alt": "Venturefizz.com Home page"
+        },
+        {
+          "src": "../../images/venturefizz/venturefizz-page-search.jpg",
+          "alt": "Venturefizz.com Search page"
+        },
+        {
+          "src": "../../images/venturefizz/venturefizz-video-detail.jpg",
+          "alt": "Venturefizz.com Video detail page"
+        },
+        {
+          "src": "../../images/venturefizz/venturefizz-companies.jpg",
+          "alt": "Venturefizz.com Companies page"
+        
+        }
       ]
     }
   ],
   "featuredImage": {
-    "src": "/img/venturefizz/venturefizz-home.jpg",
+    "src": "../../images/venturefizz/venturefizz-home.jpg",
     "alt": "Featured image"
   },
   "slug": "/work/venturefizz",
