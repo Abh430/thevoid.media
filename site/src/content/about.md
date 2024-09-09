@@ -1,8 +1,7 @@
 ---
 templateKey: page
 title: About
-featuredimage: /img/synesthesia/mediaplayer.jpg
-images: /img/synesthesia/mediaplayer.jpg
+featuredimage: ../../images/synesthesia/mediaplayer.jpg
 date: 2024-07-14
 categories:
   - Primary

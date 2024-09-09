@@ -40,14 +40,38 @@ export const WorkPageQuery = graphql`
             date(formatString: "DD:MM:YYYY hh:mm a")
             title
             description
-            featuredimage {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
           }
         }
       }
     }
   }
 `
+
+
+// `
+//   query IndexPage {
+//     allMarkdownRemark(
+//       filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+//       limit: 30
+//       sort: { frontmatter: { date: DESC } }
+//     ) {
+//       edges {
+//         node {
+//           fields {
+//             slug
+//           }
+//           frontmatter {
+//             date(formatString: "DD:MM:YYYY hh:mm a")
+//             title
+//             description
+//             featuredimage {
+//               childImageSharp {
+//                 gatsbyImageData
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
