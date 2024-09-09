@@ -99,8 +99,8 @@
     }
   ],
   "featuredImage": {
-    "src": "../../images/synesthesia/mediaplayer.jpg",
-    "alt": "Featured image"
+    "src": "../../images/synesthesia/synesthesia-logo.png",
+    "alt": "Synesthesia Logo"
   },
   "externalLink": "https://synesthesia.live"
 }

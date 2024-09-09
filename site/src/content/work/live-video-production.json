@@ -54,8 +54,7 @@
     }
   ],
   "featuredImage": {
-    "src": "../../images/synesthesia/mediaplayer.jpg",
-    "alt": "Featured image"
-  },
-  "slug": "/work/live-video-production"
+    "src": "../../images/live-video/kings-theater.jpg",
+    "alt": "Live Video Cover Image"
+  }
 }

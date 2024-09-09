@@ -15,6 +15,7 @@ export interface WorkItem {
   sections: WorkSection[]
   featuredImage: Image
   colSpan?: number
+  path: string
 }
 
 export interface Image {
@@ -37,6 +38,7 @@ export function getWorkPageData(){
           node {
             content
             externalLink
+            path: gatsbyPath(filePath: "/work/{workJson.title}")
             sections {
               content
               columns
@@ -63,8 +65,8 @@ export function getWorkPageData(){
                   gatsbyImageData(
                   placeholder: BLURRED, 
                   formats: AUTO,
-                  width: 800,
-                  height: 800,)
+                  width: 1000,
+                  )
                 }
               }
               alt

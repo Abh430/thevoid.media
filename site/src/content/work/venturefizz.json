@@ -31,8 +31,8 @@
     }
   ],
   "featuredImage": {
-    "src": "../../images/venturefizz/venturefizz-home.jpg",
-    "alt": "Featured image"
+    "src": "../../images/venturefizz/VentureFizzLogo.png",
+    "alt": "Venturefizz logo"
   },
   "slug": "/work/venturefizz",
   "externalLink": "https://venturefizz.com/"
