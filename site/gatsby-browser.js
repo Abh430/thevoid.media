@@ -14,3 +14,4 @@ import "@fontsource/noto-serif/400.css"
 
 import "./src/styles/global.css"
 import "./src/styles/site.css"
+import "./src/styles/modal.css"

@@ -100,6 +100,14 @@ module.exports = {
         icon: `src/images/void-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-plugin-portal`,
+      options: {
+        key: 'modal-root',
+        id: 'modal-root',
+        className: 'modal-root',      
+      },
+    },
 
   // {
     //   resolve: "gatsby-plugin-decap-cms",

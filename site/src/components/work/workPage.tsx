@@ -4,12 +4,13 @@ import { Fade } from "react-awesome-reveal"
 // Components
 import WorkGrid from "./workGrid"
 
-//data
-import { getWorkPageData } from "./workData"
+interface WorkPageProps {
+  openModal?: (workItem: any) => void
+  workItems?: any;
+  hasModal: boolean;
+}
 
-const WorkPage = () => {
-
-  const workItems = getWorkPageData();
+const WorkPage = ({workItems, hasModal, openModal}: WorkPageProps) => {
 
   return (
     <div id="work" className="max-w-7xl mx-auto mt-10">
@@ -22,7 +23,7 @@ const WorkPage = () => {
         <Fade cascade>
           <h2 className="text-zinc-50 py-2 text-2xl font-semibold">WORK</h2>
         </Fade>
-        <WorkGrid workItems={workItems} />
+        <WorkGrid workItems={workItems} openModal={openModal} hasModal={hasModal} />
       </div>
     </div>
   )

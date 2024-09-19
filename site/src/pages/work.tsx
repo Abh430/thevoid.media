@@ -3,19 +3,15 @@ import WorkPage from "../components/work/workPage"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const Work = () => {
+const Work = (props) => {
+  const { data } = props;
   return (
     <Layout>
-
-      <WorkPage></WorkPage>
+      <WorkPage workItems={data} hasModal={false}></WorkPage>
     </Layout>
   )
 }
 
-{/* <Seo
-title="The Void - Work"
-description="Holo is a visually striking and highly customizable open source theme built on the powerful Gatsby framework and integrated with the versatile Decap CMS"
-></Seo> */}
 
 export const Head = () => (
   <Seo
