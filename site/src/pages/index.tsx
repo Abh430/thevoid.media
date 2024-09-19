@@ -27,8 +27,16 @@ function closeModal() {
 }
 
 useEffect(() => {
+  if(!document) return;
   document.body.style.overflowY = modalIsVisible ? "hidden" : "auto";
-  document.body.style.position = modalIsVisible ? "fixed" : "relative";
+  // document.body.style.height = modalIsVisible ? "100vh" : "auto";
+
+
+  // document.getElementById("___gatsby").style.overflowY = modalIsVisible ? "hidden" : "auto";
+  // document.getElementById("___gatsby").style.height = modalIsVisible ? "100vh" : "auto";
+  document.getElementById("modal-root").style.pointerEvents = modalIsVisible ? "auto" : "none";
+  document.getElementById("modal-root").style.overflowY = modalIsVisible ? "scroll" : "hidden";
+  document.getElementById("modal-root").scrollTop = 0;
 }, [modalIsVisible]);
 
 
