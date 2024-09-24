@@ -11,7 +11,8 @@ interface WorkPageProps {
 }
 
 const WorkPage = ({workItems, hasModal, openModal}: WorkPageProps) => {
-
+  console.log(workItems);
+  
   return (
     <div id="work" className="max-w-7xl mx-auto mt-10">
       

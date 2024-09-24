@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby"
 //import gatsby image types
 //import { GatsbyImage } from "gatsby-plugin-image"
+// import { workQuery } from "../../pages/work"
 
 
 export interface WorkItem {
@@ -30,55 +31,59 @@ export interface WorkSection {
   columns?: number
 }
 
-export function getWorkPageData(){
-  const data = useStaticQuery(graphql`
-    query MyQuery {
-      allWorkJson {
-        edges {
-          node {
-            content
-            externalLink
-            path: gatsbyPath(filePath: "/work/{workJson.title}")
-            sections {
-              content
-              columns
-              title
-              images {
-                src {
-                  childImageSharp {
-                    gatsbyImageData(
-                    placeholder: BLURRED, 
-                    formats: AUTO,
-                    width: 800,
-                    height: 800,)
-                  }
-                }
-                alt
+export const workQuery = graphql`
+query {
+  allWorkJson {
+    edges {
+      node {
+        content
+        externalLink
+        path: gatsbyPath(filePath: "/work/{workJson.title}")
+        sections {
+          content
+          columns
+          title
+          images {
+            src {
+              childImageSharp {
+                gatsbyImageData(
+                placeholder: BLURRED, 
+                formats: AUTO,) 
               }
             }
-            position
-            slug
-            title
-            featuredImage {
-              src {
-                childImageSharp {
-                  gatsbyImageData(
-                  placeholder: BLURRED, 
-                  formats: AUTO,
-                  width: 1000,
-                  )
-                }
-              }
-              alt
-            }
-            order
-            endDate
-            startDate
+            alt
           }
         }
+        position
+        slug
+        title
+        featuredImage {
+          src {
+            childImageSharp {
+              gatsbyImageData(
+              placeholder: BLURRED, 
+              formats: AUTO,
+              width: 1000,
+              )
+            }
+          }
+          alt
+        }
+        order
+        endDate
+        startDate
       }
-      }
-  `)
-  const work = data.allWorkJson.edges.map((edge: any) => edge.node).sort((a: WorkItem, b: WorkItem) => a.order - b.order);
+    }
+  }
+  }
+`;
+
+export const sortWorkPageOrder = (data: WorkItem[]) => {
+  return data.map((edge: any) => edge.node).sort((a: WorkItem, b: WorkItem) => a.order - b.order);
+}
+
+export function getWorkPageData(){
+  const data = useStaticQuery(workQuery);
+  const work = sortWorkPageOrder(data.allWorkJson.edges);
   return work;
 }

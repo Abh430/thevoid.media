@@ -16,7 +16,6 @@ interface WorkGridProps {
 }
 
 const WorkGrid = ({ workItems, openModal, hasModal }: WorkGridProps) => {
-  console.log(workItems);
   return (
     <>
     <div className="grid-cols-3 grid-flow-row gap-4">
@@ -32,9 +31,9 @@ const WorkGrid = ({ workItems, openModal, hasModal }: WorkGridProps) => {
                   
                 <BackgroundImage
                   Tag="div"
-                  className="pl-5"
+                  className=""
                   style={{
-                    backgroundSize: '90%',
+                    backgroundSize: '95%',
                     backgroundPosition: 'right center'
                   }}
                   // fluid={bgImage?.fluid}
@@ -42,14 +41,14 @@ const WorkGrid = ({ workItems, openModal, hasModal }: WorkGridProps) => {
                   {...bgImage}
                   preserveStackingContext
                 >
-                  <div key={index} className={`col-span-3 bg-center bg-no-repeat  h-40 `}>
-                    <span>{workItem.title}</span>
-                    <span>{workItem.position[0]}</span>
-                    <div className="block">
+                  <div key={index} className="grid-item col-span-3 p-5 bg-center bg-no-repeat h-40 flex flex-col flex-nowrap justify-center">
+                    <span className="block text-zinc-50 font-semibold grid-item__title">{workItem.title}</span>
+                    <span className="block text-zinc-200 text-xl">{workItem.position[0]}</span>
+                    <div className="block grid-item__description">
                       <span>{workItem.startDate}</span> - <span>{workItem.endDate}</span>
                     </div>
                     
-                    <span className="block">{workItem.content}</span>
+                    <span className="block overflow-hidden grid-item__description">{workItem.content}</span>
 
                   </div>
                   </BackgroundImage>
@@ -65,7 +64,7 @@ const WorkGrid = ({ workItems, openModal, hasModal }: WorkGridProps) => {
 
 const GridItemModal = ({workItem, children, openModal}) => {
   return (
-    <a className="mb-8 block relative overflow-hidden bg-gradient-to-r from-zinc-600 cursor-pointer" data-href={workItem.slug} onClick={() => openModal(workItem)}  >
+    <a className="mb-8 block relative overflow-hidden ease-in-out duration-800 transition-all bg-gradient-to-r from-0% hover:from-60% from-indigo-950 cursor-pointer" data-href={workItem.slug} onClick={() => openModal(workItem)}  >
       {children}
     </a>
   )
@@ -74,7 +73,7 @@ const GridItemModal = ({workItem, children, openModal}) => {
 
 const GridItemLink = ({workItem, children}) => {
   return (
-    <Link className="mb-8 block relative overflow-hidden bg-gradient-to-r from-zinc-600 cursor-pointer" to={workItem.path}  >
+    <Link className="mb-8 block relative overflow-hidden ease-in-out duration-800 transition-all bg-gradient-to-r from-0% hover:from-60% from-indigo-950 cursor-pointer" to={workItem.path}  >
       {children}
     </Link>
   )

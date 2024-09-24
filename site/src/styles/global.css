@@ -61,3 +61,23 @@ body {
 
 /* 404 page */ 
 .\34 04-p {display: flex; flex-direction: column; align-items: center; padding: 40px 0px;}
+
+.grid-item .grid-item__description {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+
+
+.grid-item:hover .grid-item__description {
+  max-height: 300px;
+}
+
+.grid-item__title {
+  font-size: 1.75rem;
+  transition: font-size 0.15s ease-in-out;
+}
+
+.grid-item:hover .grid-item__title {
+  font-size: 1.5rem;
+}

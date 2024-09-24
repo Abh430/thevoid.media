@@ -12,10 +12,8 @@ import ScrollSpy from "react-ui-scrollspy";
 import WorkSingleton from "../components/work/workSingleton"
 
 const IndexPage = (props) => {
-console.log(props);
 const [modalIsVisible, setModalIsVisible] = useState(false);
 const [activeModalItem, setActiveModalItem] = useState(null);
-console.log(activeModalItem);
 
 function openModal(workItem) {
   setActiveModalItem(workItem);
@@ -29,23 +27,25 @@ function closeModal() {
 useEffect(() => {
   if(!document) return;
   document.body.style.overflowY = modalIsVisible ? "hidden" : "auto";
-  // document.body.style.height = modalIsVisible ? "100vh" : "auto";
 
-
-  // document.getElementById("___gatsby").style.overflowY = modalIsVisible ? "hidden" : "auto";
-  // document.getElementById("___gatsby").style.height = modalIsVisible ? "100vh" : "auto";
   document.getElementById("modal-root").style.pointerEvents = modalIsVisible ? "auto" : "none";
   document.getElementById("modal-root").style.overflowY = modalIsVisible ? "scroll" : "hidden";
   document.getElementById("modal-root").scrollTop = 0;
+
+  //update the browser history to include the path of the active modal item
+  if(modalIsVisible) {
+    window.history.pushState(null, "", activeModalItem.path);
+  }
+
 }, [modalIsVisible]);
 
 
 const Modal = ({ onClose, isVisible, workItem }) => {
   return (
     <>
-      <div className={"modal bg-black/75 " + (isVisible ? "visible active" : "invisible")}>
-      <div className="max-w-7xl mx-auto modal-inner relative py-12 px-12">
-          <span className="modal-close text-zinc-50 fixed top-12 right-20 cursor-pointer p-4 border-solid border" onClick={() => onClose()}>X</span>
+      <div className={"modal bg-zinc-800/80 p-12  " + (isVisible ? "visible active" : "invisible")}>
+      <div className="max-w-6xl mx-auto modal-inner relative py-12 px-12 bg-zinc-950/90">
+          <span className="modal-close text-zinc-50 fixed top-12 right-16 cursor-pointer px-4 py-3 rounded-sm border-solid border " onClick={() => onClose()}>X</span>
           <WorkSingleton workItem={workItem} />
         </div>
       </div>

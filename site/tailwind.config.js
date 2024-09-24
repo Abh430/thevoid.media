@@ -13,7 +13,7 @@ module.exports = {
     colors: {
       black: colors.black,
       purple: colors.purple,
-      pink: colors.pink,
+      blue: colors.blue,
       cyan: colors.cyan,
       darkpurple: "#634880",
       white: colors.white,
@@ -23,6 +23,7 @@ module.exports = {
       gray: colors.gray,
       transparent: colors.transparent,
       zinc: colors.zinc,
+      indigo: colors.indigo,
     },
     screens: {
       xxs: "320px",

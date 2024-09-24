@@ -1,5 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const WorkSingleton = (props) => {
@@ -10,7 +12,7 @@ if(!workItem) return null;
   return (
       <div className="max-w-7xl mx-auto relative box-border">
         <header className="block">
-          <h1 className="text-zinc-50 py-2 text-4xl font-semibold">{workItem.title} <a href={workItem.externalLink}>link out</a></h1>
+          <h1 className="text-zinc-50 py-2 text-4xl font-semibold">{workItem.title} <a href={workItem.externalLink} target="_blank"><span class="sr-only">link out</span> <FontAwesomeIcon className="text-indigo-400 " icon={faArrowUpRightFromSquare} /></a></h1>
           <span className="text-zinc-200 text-xl">
             {
               workItem.position.map((position, index) => {

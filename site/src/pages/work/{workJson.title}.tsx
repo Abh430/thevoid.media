@@ -47,8 +47,7 @@ export const query = graphql`
             gatsbyImageData(
             placeholder: BLURRED, 
             formats: AUTO,
-            width: 800,
-            height: 800,)
+            width: 1200,)
           }
         }
         alt
