@@ -5,16 +5,16 @@ const AboutPage = () => {
   return (
     <div id="about" className="max-w-7xl mx-auto mt-10">
       
-        <div className="mt-10  flex flex-row justify-space xxs:flex-col xs:flex-col sm:flex-row content-center justify-center align-middle text-center">
+        {/* <div className="mt-10  flex flex-row justify-space xxs:flex-col xs:flex-col sm:flex-row content-center justify-center align-middle text-center">
           
-        </div>
+        </div> */}
 
-      <div className="mt-10 px-8">
+      <div className="px-8 mb-20">
         <Fade cascade>
-          <h2 className="text-zinc-50 py-2 text-2xl font-semibold">ABOUT</h2>
+          <h2 className="text-zinc-50 pt-2 pb-8 text-2xl font-semibold">ABOUT</h2>
         </Fade>
         <Fade cascade>
-          <h3 className="text-black text-3xl font-bold xxs:text-2xl xs:text-3xl text-gradient bg-gradient-to-r from-pink-800 to-purple-700">
+          <h3 className="text-indigo-100 text-2xl font-light">
             Andrew Hunter aka The Void
           </h3>
         </Fade>

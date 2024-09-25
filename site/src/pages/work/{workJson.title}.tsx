@@ -12,7 +12,9 @@ const Work = (props) => {
 
   return (
     <Layout>
-      <WorkSingleton workItem={workItem} />
+      <div className="max-w-7xl mx-auto relative box-border">
+        <WorkSingleton workItem={workItem} />
+      </div>
     </Layout>
   )
 }

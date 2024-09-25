@@ -5,12 +5,12 @@ import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const WorkSingleton = (props) => {
-  const { workItem } = props;
+  const { workItem, onClose } = props;
 
 if(!workItem) return null;
 
   return (
-      <div className="max-w-7xl mx-auto relative box-border">
+      <div className="">
         <header className="block">
           <h1 className="text-zinc-50 py-2 text-4xl font-semibold">{workItem.title} <a href={workItem.externalLink} target="_blank"><span class="sr-only">link out</span> <FontAwesomeIcon className="text-indigo-400 " icon={faArrowUpRightFromSquare} /></a></h1>
           <span className="text-zinc-200 text-xl">

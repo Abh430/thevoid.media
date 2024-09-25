@@ -11,18 +11,16 @@ interface WorkPageProps {
 }
 
 const WorkPage = ({workItems, hasModal, openModal}: WorkPageProps) => {
-  console.log(workItems);
-  
   return (
-    <div id="work" className="max-w-7xl mx-auto mt-10">
+    <div id="work" className="max-w-7xl mx-auto">
       
-        <div className="mt-10  flex flex-row justify-space xxs:flex-col xs:flex-col sm:flex-row content-center justify-center align-middle text-center">
+        {/* <div className="mt-10  flex flex-row justify-space xxs:flex-col xs:flex-col sm:flex-row content-center justify-center align-middle text-center">
           
-        </div>
+        </div> */}
 
-      <div className="mt-10 px-8">
+      <div className="mb-20 sm:mb-10 px-8">
         <Fade cascade>
-          <h2 className="text-zinc-50 py-2 text-2xl font-semibold">WORK</h2>
+          <h2 className="text-zinc-50 pt-2 pb-8 text-2xl font-semibold">WORK</h2>
         </Fade>
         <WorkGrid workItems={workItems} openModal={openModal} hasModal={hasModal} />
       </div>
