@@ -6,6 +6,9 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faInstagram, faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons'
+
+const emailAddress = "andrew@thevoid.media";
 
 // Components
 const ContactPage = () => {
@@ -16,99 +19,45 @@ const ContactPage = () => {
           <h2 className="text-zinc-50 py-2 text-2xl font-semibold">CONTACT</h2>
             <div className="w-full shrink-0 grow-0 basis-auto lg:w-ful mt-10">
               <div className="flex flex-wrap">
-                <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:px-3">
-                  <div className="flex items-start">
+                <div className="mb-12 shrink-0 basis-auto md:px-3 lg:px-3">
+                  <div className="flex items-center">
                     <div className="shrink-0">
                       <div className="inline-block rounded-md bg-teal-400-100 p-4 text-zinc-300">
                       <FontAwesomeIcon icon={faEnvelope} size="2xl" />
                       </div>
                     </div>
                     <div className="ml-2 grow">
-                      <p className="mb-2 font-bold underline decoration-pink">
-                        Email
-                      </p>
-                      <p className="text-neutral-500 mb-2">
-                        <a href="mailto:hello@holo.com?subject=Contact Holo for help.">
-                          hello@holo.com
+                      <p className="mb-2">
+                        <a className="text-indigo-300 duration-200 transition hover:text-indigo-200" href={`mailto:${emailAddress}`}>
+                          {emailAddress}
                         </a>
                       </p>
                     </div>
                   </div>
                 </div>
-                <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:px-3">
-                  <div className="flex items-start">
-                    <div className="shrink-0">
-                      <div className="inline-block rounded-md bg-teal-400-100 p-4 text-zinc-300">
-                      <FontAwesomeIcon icon={faEnvelope} size="2xl" />
-                      </div>
-                    </div>
-                    <div className="ml-2 grow">
-                      <p className="mb-2 font-bold underline decoration-pink">
-                        Social Media
-                      </p>
-                      <ul className="text-neutral-500 mb-2">
-                        <li>
-                          <a href="">
-                            Instagram
+                <div className="my-3 w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:px-3">
+                  <div className=" ">
+                      <ul className="text-neutral-500 items-center flex">
+                        <li className="ml-4">
+                          <a target="_blank" href="https://www.instagram.com/thevoid.media/">
+                          <FontAwesomeIcon icon={faInstagram} size="2xl" />
                           </a>
                         </li>
-                        <li>
-                          <a href="">
-                            Facebook
+                        <li className="ml-4">
+                          <a target="_blank" href="https://www.facebook.com/TheVoidVisual">
+                          <FontAwesomeIcon icon={faFacebook} size="2xl" />
                           </a>
                         </li>
-                        <li>
-                          <a href="">
-                            Linked-in
+                        <li className="ml-4">
+                          <a target="_blank" href="https://github.com/Abh430">
+                          <FontAwesomeIcon icon={faGithub} size="2xl" />
                           </a>
                         </li>
                       </ul>
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <form className="mt-5" name="contact" onSubmit={() => {}}>
-              <div className="flex xxs:flex-col sm:flex-row">
-                <div className="sm:mr-5 xxs:mr-0">
-                  <label>
-                    <Input
-                      placeholder="Your Name"
-                      type="text"
-                      name="name"
-                    ></Input>
-                  </label>
-                </div>
-                <div className="sm:ml-5 xxs:ml-0 xxs:mt-2 sm:mt-0">
-                  <label>
-                    <Input
-                      placeholder="Your Email"
-                      type="email"
-                      name="email"
-                    ></Input>
-                  </label>
-                </div>
-              </div>
-              <label>
-                <textarea
-                  className="mt-5 w-full bg-bg bg-opacity-20 rounded-xl p-5 focus:outline-none focus:ring-2 focus:ring-purple focus:border-transparent"
-                  rows="5"
-                  placeholder="How can we help you?"
-                  type="text"
-                  name="Message"
-                ></textarea>
-              </label>
-              <div>
-                <label>
-                  <Button
-                    type="submit"
-                    title="Send Message"
-                    colorClass="bg-gradient-to-r from-pink to-purple font-montserrat"
-                    marginClass="mt-5"
-                  ></Button>
-                </label>
-              </div>
-            </form>
         </Fade>
       </div>
     </div>
