@@ -19,21 +19,17 @@ const ContactPage = () => {
           <h2 className="text-zinc-50 py-2 text-2xl font-semibold">CONTACT</h2>
             <div className="w-full shrink-0 grow-0 basis-auto lg:w-ful">
               <div className="flex flex-wrap">
-                <div className="mb-12 shrink-0 basis-auto md:px-3 lg:px-3">
-                  <div className="flex items-center">
-                    <div className="shrink-0">
-                      <div className="inline-block rounded-md bg-teal-400-100 p-4 text-zinc-300">
-                      <FontAwesomeIcon icon={faEnvelope} size="2xl" />
+                <div className="mb-12 shrink-0 basis-auto">
+                    <div className="flex items-center ">
+                      <div className="inline-block mr-2 rounded-md bg-teal-400-100 py-4 text-zinc-300">
+                        <FontAwesomeIcon icon={faEnvelope} size="2xl" />
                       </div>
-                    </div>
-                    <div className="ml-2 grow">
                       <p className="mb-2">
                         <a className="text-indigo-300 duration-200 transition hover:text-indigo-200" href={`mailto:${emailAddress}`}>
                           {emailAddress}
                         </a>
                       </p>
                     </div>
-                  </div>
                 </div>
                 <div className="my-3 w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:px-3">
                   <div className=" ">

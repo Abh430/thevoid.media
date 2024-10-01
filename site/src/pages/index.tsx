@@ -1,5 +1,10 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import Layout from "../components/layout"
+import { navigate } from "gatsby"
+import {
+  createMemorySource,
+  createHistory
+} from "@reach/router"
 
 // Components
 import Header from "../components/Home/header"
@@ -11,9 +16,18 @@ import ScrollSpy from "react-ui-scrollspy";
 
 import WorkSingleton from "../components/work/workSingleton"
 
+//data
+import { getWorkPageData } from "../components/work/workData";
+
+export const SEARCH_PAGE_PARAM = "page";
+export const WORK_PAGE_PARAM = "item";
+
 const IndexPage = (props) => {
+const workItems = getWorkPageData();
 const [modalIsVisible, setModalIsVisible] = useState(false);
-const [activeModalItem, setActiveModalItem] = useState(null);
+const [activeModalItem, setActiveModalItem] = useState(workItems[0]);
+const bodyRef = useRef(null);
+const headerRef = useRef(null);
 
 function openModal(workItem) {
   setActiveModalItem(workItem);
@@ -22,6 +36,7 @@ function openModal(workItem) {
 
 function closeModal() {
   setModalIsVisible(false);
+  navigate("/");
 }
 
 useEffect(() => {
@@ -31,38 +46,84 @@ useEffect(() => {
   document.getElementById("modal-root").style.pointerEvents = modalIsVisible ? "auto" : "none";
   document.getElementById("modal-root").style.overflowY = modalIsVisible ? "scroll" : "hidden";
   document.getElementById("modal-root").scrollTop = 0;
-
   //update the browser history to include the path of the active modal item
-  if(modalIsVisible) {
-    window.history.pushState(null, "", activeModalItem.path);
-  }
+  if(modalIsVisible && activeModalItem) {
+    const searchParams = new URLSearchParams(window.location.search);
+    const path = activeModalItem.path.split("/").filter(Boolean);
+    
+    searchParams.set(WORK_PAGE_PARAM, path[1]);
+    searchParams.set(SEARCH_PAGE_PARAM, path[0]);
 
-}, [modalIsVisible]);
+    navigate(`/?${searchParams.toString()}`);
+  }
+}, [modalIsVisible, activeModalItem]);
+
+
+
+function clickOutsideModal(e) {
+  if(!e.target.classList.contains("modal-inner") && !e.target.closest(".modal-inner")) {
+    closeModal();
+  }
+}
 
 //create a click handler for the modal element that fires the modal close if clicked outside of "modal-inner" class
+
+
+//on mount/unmount. 
+//Listen for back/forward buttons to manage modal state
+//Open the modal on page load if the url contains a work page
+//Navigate to elementId if the url contains a page param
 useEffect(() => {
-  if(!document) return;
+  const searchParams = new URLSearchParams(window.location.search);
+  const pageParam = searchParams.get(SEARCH_PAGE_PARAM);
+  const workPageParam = searchParams.get(WORK_PAGE_PARAM);
+  const isWorkPage = !!workPageParam;
+
+  if(pageParam) {
+    const element = document.getElementById(pageParam);
+    if(element) {
+      element.scrollIntoView();
+    }
+  }
+  
+  if(isWorkPage && workItems.length) {
+    setActiveModalItem(workItems.find(node => {
+      return node.path.includes(workPageParam);
+    }));
+    setModalIsVisible(isWorkPage);
+  }
+
+  //handler for back/forward buttons
+  const browserHistory = createHistory(window);
+  const backListener = browserHistory.listen((history) => {
+    if (history.action === "POP") {
+      
+      const newWorkItem = workItems.find(node => {
+        return node.path.includes(workPageParam);
+      });
+
+      if(isWorkPage && newWorkItem) {
+        openModal(newWorkItem);
+      } else {
+        closeModal();
+      }
+  
+    }
+  });
+
   const modal = document.querySelector(".modal");
   if(modal) {
-    modal.addEventListener("click", (e) => {
-      //check if the element or its parents have the modal-inner class
-      if(!e.target.classList.contains("modal-inner") && !e.target.closest(".modal-inner")) {
-        setModalIsVisible(false); 
-      }
-    });
+    document.getElementById("modal-root").addEventListener("click", clickOutsideModal);
   }
 
   return () => {
     if(modal) {
-      modal.removeEventListener("click", (e) => {
-        if(!e.target.classList.contains("modal-inner") && !e.target.closest(".modal-inner")) {
-          setModalIsVisible(false); 
-        }
-      });
+      document.getElementById("modal-root").removeEventListener("click", clickOutsideModal);
     }
   }
 
-}, [modalIsVisible]);
+  
+}, []);
 
 
 const Modal = ({ onClose, isVisible, workItem }) => {
@@ -85,9 +146,9 @@ const Modal = ({ onClose, isVisible, workItem }) => {
     <>
       <div className="min-h-screen w-screen">
         <Layout hasFooter={false} hasNav={false}>
-            <div className="max-w-7xl mx-auto lg:px-6 md:px-3 relative box-border flex flex-row gap-7 justify-between">
+            <div className="max-w-7xl mx-auto lg:px-6 md:px-3 relative box-border flex flex-row gap-7 justify-between" ref={bodyRef}>
               <Header />
-              <Body {...props} openModal={openModal} />
+              <Body {...props} headerRef={headerRef} bodyRef={bodyRef} workItems={workItems} openModal={openModal} />
             </div>
         </Layout>
       </div>

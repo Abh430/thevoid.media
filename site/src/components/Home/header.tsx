@@ -8,7 +8,7 @@ interface HeaderColumnProps {
   scrollPos?: number
 }
 
-const HeaderColumn = ({activeItem, scrollPos}: HeaderColumnProps) => {
+const HeaderColumn = ({}: HeaderColumnProps) => {
   return (
         <header className="lg:sticky lg:top-0 mx-auto w-2/12 px-4 sm:px-6 lg:px-0 lg:pt-12 flex gap-10 flex-col align-middle max-h-screen">
           <div className="text-center lg:text-left flex justify-center">
@@ -39,7 +39,7 @@ const HeaderColumn = ({activeItem, scrollPos}: HeaderColumnProps) => {
               src={hero}
               alt=""
             ></img> */}
-            <ul>
+            <ul id="navigation">
               <li className="relative">
                 <a href="#about" data-to-scrollspy-id="about">ABOUT</a>
               </li>
