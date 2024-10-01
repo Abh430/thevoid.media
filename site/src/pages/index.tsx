@@ -36,7 +36,13 @@ function openModal(workItem) {
 
 function closeModal() {
   setModalIsVisible(false);
-  navigate("/");
+  const searchParams = new URLSearchParams(window.location.search);
+  const path = activeModalItem.path.split("/").filter(Boolean);
+  
+  searchParams.delete(WORK_PAGE_PARAM);
+  searchParams.set(SEARCH_PAGE_PARAM, path[0]);
+  
+  navigate(`/?${searchParams.toString()}`);
 }
 
 useEffect(() => {
@@ -107,7 +113,6 @@ useEffect(() => {
       } else {
         closeModal();
       }
-  
     }
   });
 
@@ -121,8 +126,6 @@ useEffect(() => {
       document.getElementById("modal-root").removeEventListener("click", clickOutsideModal);
     }
   }
-
-  
 }, []);
 
 
@@ -147,7 +150,7 @@ const Modal = ({ onClose, isVisible, workItem }) => {
       <div className="min-h-screen w-screen">
         <Layout hasFooter={false} hasNav={false}>
             <div className="max-w-7xl mx-auto lg:px-6 md:px-3 relative box-border flex flex-row gap-7 justify-between" ref={bodyRef}>
-              <Header />
+              <Header headerRef={headerRef} />
               <Body {...props} headerRef={headerRef} bodyRef={bodyRef} workItems={workItems} openModal={openModal} />
             </div>
         </Layout>

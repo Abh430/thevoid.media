@@ -6,9 +6,10 @@ import { navigate } from 'gatsby';
 interface HeaderColumnProps {
   activeItem?: string
   scrollPos?: number
+  headerRef: any
 }
 
-const HeaderColumn = ({}: HeaderColumnProps) => {
+const HeaderColumn = ({headerRef}: HeaderColumnProps) => {
   return (
         <header className="lg:sticky lg:top-0 mx-auto w-2/12 px-4 sm:px-6 lg:px-0 lg:pt-12 flex gap-10 flex-col align-middle max-h-screen">
           <div className="text-center lg:text-left flex justify-center">
@@ -39,15 +40,15 @@ const HeaderColumn = ({}: HeaderColumnProps) => {
               src={hero}
               alt=""
             ></img> */}
-            <ul id="navigation">
+            <ul id="navigation" ref={headerRef}>
               <li className="relative">
-                <a href="#about" data-to-scrollspy-id="about">ABOUT</a>
+                <a className="navLink" href="#about" data-to-scrollspy-id="about">ABOUT</a>
               </li>
               <li className="relative">
-                <a href="#work" data-to-scrollspy-id="work">WORK</a>
+                <a className="navLink" href="#work" data-to-scrollspy-id="work">WORK</a>
               </li>
               <li className="relative">
-                <a href="#contact" data-to-scrollspy-id="contact">CONTACT</a>
+                <a className="navLink" href="#contact" data-to-scrollspy-id="contact">CONTACT</a>
               </li>
             </ul>
           </div>

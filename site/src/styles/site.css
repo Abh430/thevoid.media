@@ -8,3 +8,14 @@
   top: 0;
   left: -20px;
 }
+
+.navLink:active, .navLink:hover {
+  font-weight: bolder;
+}
+
+.navLink:active:before, .navLink:hover:before {
+  content: "•";
+  position: absolute;
+  top: 0;
+  left: -20px;
+}
