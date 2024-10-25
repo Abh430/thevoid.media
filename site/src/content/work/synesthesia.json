@@ -1,19 +1,19 @@
 {
   "title": "Synesthesia",
-  "position": ["CEO", "Full Stack Engineer"],
+  "position": ["CEO", "Full Stack Engineer", "UX Developer"],
   "order": 0,
   "startDate": "2019",
   "endDate": "2024",
-  "content": "I worked at Synesthesia for a while and it was fun while it lasted",
+  "content": "Lead a team that grew and expanded live music visual software",
   "sections": [
     {
       "title": "Project Overview",
-      "content": "Synesthesia is a music player that visualizes music in a 3D space. The user can explore the music in a 3D environment and interact with the music in a way that is not possible with traditional music players."
+      "content": "I worked with a team to grow the capabilities, market, and brand of a growing live visual software. Synesthesia offers users a simple and straightforward way to leverage and control generative graphics tailored for live music. While working on Synesthesia, I was responsible for elevating the companies marketing, community outreach, support, user experience, and engineering output. I also managed a team of artists and developers that contributed to the in-app marketplace. Below are some of the features that I designed and built."
 
     },
     {
       "title": "Built-in Editor",
-      "content": "Synesthesia is built with React, Three.js, and Web Audio API.",
+      "content": "An integrated editor that allows users to create and modify scenes in real time. Includes advanced features like auto-compile and auto-back, as well as custom linting based on the state of the editor. Additionally, the editor supports side by side comparison with other scenes and diffing with the current scenes backups.",
       "columns": 1,
       "images": [
         {
@@ -36,10 +36,10 @@
     },
     {
       "title": "Marketplace",
-      "content": "I helped design and build the majority of the in-app marketplace. Additionally I oversaw its growth and managed the artists and developers that contributed their works for sale.",
+      "content": "Designed and developed the majority of the in-app marketplace. This includes: interior page design, custom API structure, sales analytics and reporting, stripe integration, and user experience.  Additionally I oversaw its growth and managed the artists and developers that contributed their works for sale.",
       "columns": 1,
       "images": [
-        {
+        { 
           "src": "../../images/synesthesia/marketplace/marketplace-homepage.jpg",
           "alt": "Marketplace Homepage"
         },
@@ -55,7 +55,7 @@
     },
     {
       "title": "Media Player",
-      "content": "I helped design and build the majority of the in-app marketplace. Additionally I oversaw its growth and managed the artists and developers that contributed their works for sale.",
+      "content": "Drastically improved the media playback capabilities of Synesthesia with a new UI panel, more control to the user, and improved performance and file support. Leveraging the open source library FFMPEG, I built a new media player back-end from the ground up. With the introduction of a new media player interface, users are given powerful control over custom media use inside of the application.",
       "images": [
         {
           "src": "../../images/synesthesia/mediaplayer.jpg",
@@ -65,7 +65,7 @@
     },
     {
       "title": "Playlist",
-      "content": "I helped design and build the majority of the in-app marketplace. Additionally I oversaw its growth and managed the artists and developers that contributed their works for sale.",
+      "content": "Overhauled the UI and UX surrounding a core feature: playlists. This included a new grid view, as well as drag-and-drop functionality for faster organization. Additionally, improved performance on this component by over 100%.",
       "columns": 2,
       "images": [
         {
@@ -84,6 +84,36 @@
     },
     {
       "title": "Scene Work",
+      "content": "Ive made a lot of scenes for Synesthesia and its marketplace that leverage GLSL and Javascript for realtime visuals.",
+      "columns": 1,
+      "images": [
+        {
+          "src": "../../images/synesthesia/scene-work/flow-machine-code-sample.jpg",
+          "alt": "Playlist Panel Grid View"
+        },
+        {
+          "src": "../../images/synesthesia/scene-work/flow-machine-controls.jpg",
+          "alt": "Playlist Panel Grid Edit View"
+        }
+      ]
+    },
+    {
+      "title": "Analytics & User Experience Auditing",
+      "content": "Ive made a lot of scenes for Synesthesia and its marketplace that leverage GLSL and Javascript for realtime visuals.",
+      "columns": 1,
+      "images": [
+        {
+          "src": "../../images/synesthesia/scene-work/flow-machine-code-sample.jpg",
+          "alt": "Playlist Panel Grid View"
+        },
+        {
+          "src": "../../images/synesthesia/scene-work/flow-machine-controls.jpg",
+          "alt": "Playlist Panel Grid Edit View"
+        }
+      ]
+    },
+    {
+      "title": "Marketing & Community",
       "content": "Ive made a lot of scenes for Synesthesia and its marketplace that leverage GLSL and Javascript for realtime visuals.",
       "columns": 1,
       "images": [

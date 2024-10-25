@@ -4,19 +4,19 @@
   "order": 1,
   "startDate": "2017",
   "endDate": "present",
-  "content": "Ive worked in the live music industry for 7+ years, managing small to large teams of creatives",
+  "content": "Worked in the live music industry for 7+ years, managing small teams of creatives for events",
   "sections": [
     {
       "title": "Visual Team Lead",
-      "content": "I have selected and managed teams of creatives to produce live visuals for music festivals and concerts. This includes coordinating budgets and scheduling with ownership as well as building and executing technical requirements based on stage production.",
+      "content": "I have selected and managed teams of creatives to produce live visuals for music festivals and concerts. My responsibilities have included coordinating budgets and schedules, writing contracts and managing artist requirements. Additionally, I establish and execute technical requirements for the production as needed.",
       "images": [
         {
           "src": "../../images/live-video/suwannee.jpg",
-          "alt": "Venturefizz.com Home page"
+          "alt": "Andrew Hunter and the team including Mezmer, Tyme Visions and Data Byte at Suwannee Music Park"
         },
         {
           "src": "../../images/live-video/orion.jpg",
-          "alt": "Venturefizz.com Home page"
+          "alt": "Andrew Hunter and the team including Tenorless and Oneirogen at The Orion Ampitheater"
         }
       ]
     },
@@ -27,27 +27,27 @@
       "images": [
         {
           "src": "../../images/live-video/kings-theater.jpg",
-          "alt": "Venturefizz.com Home page"
+          "alt": "Kings Theater in Brooklyn, NY"
         },
         {
           "src": "../../images/live-video/suwannee2.png",
-          "alt": "Venturefizz.com Home page"
+          "alt": "Performance with Charles Nimbus at Suwannee Music Park in Live Oak, FL"
         },
         {
           "src": "../../images/live-video/mirage.png",
-          "alt": "Venturefizz.com Home page"
+          "alt": "Performance with Schmoop at The Mirage in Brooklyn, NY"
         },
         {
           "src": "../../images/live-video/avl.jpg",
-          "alt": "Venturefizz.com Home page"
+          "alt": "Performance with Entangled Mind at The Wortham in Asheville, NC"
         },
         {
           "src": "../../images/live-video/suwannee3.png",
-          "alt": "Venturefizz.com Home page"
+          "alt": "Performance with Schmoop at Suwannee Music Park in Live Oak, FL"
         },
         {
           "src": "../../images/live-video/mirage2.png",
-          "alt": "Venturefizz.com Home page"
+          "alt": "Performance with Schmoop at The Mirage in Brooklyn, NY"
         }
       ]
 

@@ -27,9 +27,9 @@ if(!workItem) return null;
                 `${workItem.startDate} - ${workItem.endDate}`
               }
             </span>
-            <p className="block my-4 text-zinc-300 text-md">
+            {/* <p className="block my-4 text-zinc-300 text-md">
               {workItem.content}
-            </p>
+            </p> */}
         </header>
         <div>
           {

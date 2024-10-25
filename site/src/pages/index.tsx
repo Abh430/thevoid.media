@@ -119,11 +119,25 @@ useEffect(() => {
   const modal = document.querySelector(".modal");
   if(modal) {
     document.getElementById("modal-root").addEventListener("click", clickOutsideModal);
+
+    //add event listener for esc key
+    document.addEventListener("keydown", (e) => {
+      if(e.key === "Escape") {
+        closeModal();
+      }
+    });
   }
 
   return () => {
     if(modal) {
       document.getElementById("modal-root").removeEventListener("click", clickOutsideModal);
+
+      //remove event listener for esc key
+      document.removeEventListener("keydown", (e) => {
+        if(e.key === "Escape") {
+          closeModal();
+        }
+      });
     }
   }
 }, []);

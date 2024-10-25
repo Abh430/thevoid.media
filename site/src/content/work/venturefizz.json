@@ -4,11 +4,11 @@
   "order": 2,
   "startDate": "2018",
   "endDate": "2019",
-  "content": "I worked freelance with Venturefizz for over a year and overhauled the entire site",
+  "content": "Overhauled the front-end and user experience",
   "sections": [
     {
       "title": "Website Overhaul",
-      "content": "I redid every single page of this drupal site",
+      "content": "I developed and overhauled the front-end for a large drupal based job listing site. I worked with a designer to implement their design pixel perfect and to define optimal UX patterns. ",
       "images": [
         {
           "src": "../../images/venturefizz/venturefizz-home.jpg",
