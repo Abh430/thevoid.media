@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `The Void`,
-    description: `Holo is a visually striking and highly customizable open source theme built on the powerful Gatsby framework and integrated with the versatile Decap CMS`,
+    description: `Andrew Hunter aka The Void is a multidisciplinary digital artist and experience engineer, dedicated to exploring the essence of the human condition.`,
     siteUrl: "https://thevoid.media/",
-    image: `/fe-cover.jpg`,
+    image: `/img/thevoid-cover-img.png`,
     icon: `/icon.png`,
     author: `Andrew Hunter <andrew@thevoid.media>`,
   },

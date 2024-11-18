@@ -29,6 +29,10 @@ const [activeModalItem, setActiveModalItem] = useState(workItems[0]);
 const bodyRef = useRef(null);
 const headerRef = useRef(null);
 
+const isBrowser = typeof document !== "undefined";
+
+if(!isBrowser) return null;
+
 function openModal(workItem) {
   setActiveModalItem(workItem);
   setModalIsVisible(true);
@@ -86,6 +90,7 @@ useEffect(() => {
   const isWorkPage = !!workPageParam;
 
   if(pageParam) {
+    if(!document) return;
     const element = document.getElementById(pageParam);
     if(element) {
       element.scrollIntoView();
@@ -115,7 +120,6 @@ useEffect(() => {
       }
     }
   });
-
   const modal = document.querySelector(".modal");
   if(modal) {
     document.getElementById("modal-root").addEventListener("click", clickOutsideModal);
@@ -184,10 +188,7 @@ export const Head = (props) => {
   return (
     <Seo
       title="The Void - Visual Media and Experience Designer"
-      description="I am da voyyyd."
     >
-      <body className="" />
-  
     </Seo>
   );
 }

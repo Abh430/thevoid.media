@@ -18,12 +18,15 @@ const Work = (props) => {
 }
 
 
-export const Head = () => (
-  <Seo
-    title="The Void - Visual Media and Experience Designer"
-    description="I am da voyyyd."
-  ></Seo>
-);
+export const Head = (props) => {
+
+  return (
+    <Seo
+      title="The Void - Visual Media and Experience Designer"
+    >
+    </Seo>
+  );
+}
 
 export const workQuery = graphql`
 query {
