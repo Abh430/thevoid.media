@@ -1,6 +1,8 @@
 import { Link } from "gatsby"
 import React from "react"
 
+import { SocialMediaLinks, EmailContact } from "./contact/contactPage"
+
 const Footer = () => {
   return (
     <div className="m-4 border-t">
@@ -8,12 +10,12 @@ const Footer = () => {
         <div className="footer pt-4 mt-4 rounded-xl">
           <div className="grid grid-cols-2 xxs:grid-cols-1 lg:grid-cols-2">
             <div className="self-center xxs:hidden lg:block">
-              <ul className="text-xl text-zinc-400 font-montserrat font-medium">
+              <ul className="text-sm text-zinc-400 font-montserrat">
                 <li>
-                  <Link to="/about">About</Link>
+                  <Link  className="text-sm text-zinc-400 font-montserrat" to="/about">About</Link>
                 </li>
                 <li>
-                  <Link to="/work">Work</Link>
+                  <Link  className="text-sm text-zinc-400 font-montserrat" to="/work">Work</Link>
                 </li>
                 {/* <li>
                   <Link to="/blog">Blog</Link>
@@ -22,12 +24,13 @@ const Footer = () => {
                   <Link to="/blog">Store</Link>
                 </li> */}
                 <li>
-                  <Link to="/contact">Contact</Link>
+                  <Link  className="text-sm text-zinc-400 font-montserrat" to="/contact">Contact</Link>
                 </li>
               </ul>
             </div>
-            <div className="place-self-end">
-              <p className="text-white text-lg font-bold mt-20">
+            <div className="place-self-end  mt-20">
+              <SocialMediaLinks />
+              <p className="text-white text-lg font-bold">
                 <span className="text-zinc-400 font-montserrat font-semibold mt-20">
                   &copy; {new Date().getFullYear()} Void Media, LLC. All Rights Reserved.
                 </span>
