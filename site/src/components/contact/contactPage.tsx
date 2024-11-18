@@ -50,7 +50,6 @@ export const EmailContact = () => {
 
 export const SocialMediaLinks = () => {
   return (
-    <div className=" ">
       <ul className="text-neutral-500 items-center flex">
         <li className="ml-4">
           <a target="_blank" href="https://www.instagram.com/thevoid.media/">
@@ -68,7 +67,6 @@ export const SocialMediaLinks = () => {
           </a>
         </li>
       </ul>
-  </div>
   );
 }
 

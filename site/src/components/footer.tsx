@@ -28,8 +28,10 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="place-self-end  mt-20">
-              <SocialMediaLinks />
+            <div className="place-self-end">
+              <div className="flex justify-end mb-4">
+                <SocialMediaLinks />
+              </div>
               <p className="text-white text-lg font-bold">
                 <span className="text-zinc-400 font-montserrat font-semibold mt-20">
                   &copy; {new Date().getFullYear()} Void Media, LLC. All Rights Reserved.
