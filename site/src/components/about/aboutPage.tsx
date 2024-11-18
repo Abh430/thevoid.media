@@ -19,16 +19,10 @@ const AboutPage = () => {
           </h3>
         </Fade>
         <Fade cascade>
+          <p className="text-zinc-200 opacity-70 font-normal mt-3 text-xs xxs:text-xs xs:text-xs sm:text-xs md:text-sm lg:text-lg">Andrew Hunter is a multidisciplinary digital artist and experience engineer, dedicated to exploring the essence of the human condition. His work spans multiple mediums, including event production, software and web development, projection mapping, and fine art. With a focus on creating meaningful connections, Andrew's work delves into themes such as emotion, nature, technology, and human relationships. By crafting internationally recognized art and engineering applications used worldwide, Andrew has established himself as a standout creator at the forefront of a new digital frontier.
+          </p>
           <p className="text-zinc-200 opacity-70 font-normal mt-3 text-xs xxs:text-xs xs:text-xs sm:text-xs md:text-sm lg:text-lg">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text ever
-            since the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book. It has survived not only
-            five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s with
-            the release of Letraset sheets containing Lorem Ipsum passages, and
-            more recently with desktop publishing software like Aldus PageMaker
-            including versions of Lorem Ipsum.
+          Using art and technology as powerful tools to connect people and foster empathy, Andrew is committed to leveraging his creativity and expertise to inspire and improve the lives of others. When he isn’t performing for sold-out crowds at prestigious venues or building rich interactive experiences, he enjoys nurturing his plants, cycling, hiking, and spending time with his pets.
           </p>
         </Fade>
       </div>
