@@ -51,8 +51,8 @@ const WorkGrid = ({ workItems, openModal, hasModal }: WorkGridProps) => {
                     
                     {/* Description overlay - background slides down, then content fades in */}
                     <div className="absolute inset-0">
-                      {/* Background box that slides down to cover full image */}
-                      <div className="absolute inset-x-0 top-0 h-full bg-black/80 backdrop-blur-sm rounded-b-xl -translate-y-full group-hover:translate-y-0 group-active:translate-y-0 transition-transform duration-300" />
+                      {/* Background box that grows vertically to cover full image */}
+                      <div className="absolute inset-x-0 top-0 h-0 bg-black/80 backdrop-blur-sm rounded-b-xl group-hover:h-full group-active:h-full transition-all duration-300" />
                       
                       {/* Content that fades in after background slides */}
                       <div className="relative p-4 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300 delay-150">
