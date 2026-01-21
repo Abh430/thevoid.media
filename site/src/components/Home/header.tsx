@@ -1,5 +1,5 @@
 import React from "react"
-import Image from "next/image"
+import ExportedImage from "next-image-export-optimizer"
 import {Fade} from "react-awesome-reveal"
 
 interface HeaderColumnProps {
@@ -13,7 +13,7 @@ const HeaderColumn = ({headerRef}: HeaderColumnProps) => {
         <header className="lg:sticky lg:top-0 mx-auto w-2/12 px-4 sm:px-6 lg:px-0 lg:pt-12 flex gap-10 flex-col align-middle max-h-screen">
           <div className="text-center lg:text-left flex justify-center">
               <a href="/">
-                <Image
+                <ExportedImage
                     className=""
                     src="/images/void-combo-logo-stacked.png" 
                     alt="The Void Logo"

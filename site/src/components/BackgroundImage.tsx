@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import ExportedImage from 'next-image-export-optimizer'
 
 interface BackgroundImageProps {
   src: string
@@ -21,7 +21,7 @@ export const BackgroundImage: React.FC<BackgroundImageProps> = ({
   
   return (
     <div className={`relative ${className}`} style={otherStyles}>
-      <Image
+      <ExportedImage
         src={src}
         alt={alt}
         fill

@@ -1,7 +1,7 @@
 import React from "react"
 import { GetStaticProps, GetStaticPaths } from "next"
 import Link from "next/link"
-import Image from "next/image"
+import ExportedImage from "next-image-export-optimizer"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import { getBlogPostBySlug, getAllBlogPosts } from "../../lib/data-loader"
@@ -92,7 +92,7 @@ const BlogPost = ({ post, previous, next }: BlogPostProps) => {
               {post.frontmatter.featuredimage && (
                 <div className="post-content-image">
                   <div style={{ position: 'relative', width: '100%', height: '400px' }}>
-                    <Image
+                    <ExportedImage
                       src={resolveImagePath(post.frontmatter.featuredimage)}
                       alt={post.frontmatter.title}
                       fill
@@ -153,7 +153,7 @@ const BlogPost = ({ post, previous, next }: BlogPostProps) => {
                           ? next.frontmatter.title.slice(0, 30) + "..."
                           : next.frontmatter.title}
                       </span>
-                      <Image src={RightIcon} alt="RightIcon" width={30} height={30} />
+                      <ExportedImage src={RightIcon} alt="RightIcon" width={30} height={30} />
                     </Link>
                   )}
                 </div>

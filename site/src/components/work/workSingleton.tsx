@@ -1,5 +1,5 @@
 import React from "react"
-import Image from "next/image"
+import ExportedImage from "next-image-export-optimizer"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { WorkItem } from "./workData"
@@ -66,7 +66,7 @@ const WorkSingleton = ({ workItem, onClose, isModal = false }: WorkSingletonProp
                         return (
                           <div className="py-2" key={imgIndex}>
                             <div style={{ maxWidth: 1200, position: 'relative', width: '100%', height: 'auto' }}>
-                              <Image
+                              <ExportedImage
                                 src={resolvedSrc}
                                 alt={image.alt || ''}
                                 width={1200}

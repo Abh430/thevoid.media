@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import Link from "next/link"
-import Image from "next/image"
+import ExportedImage from "next-image-export-optimizer"
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false)
@@ -13,7 +13,7 @@ const Navbar = () => {
               className="text-white flex-shrink-0 font-montserrat font-semibold"
               href="/"
             >
-              <Image
+              <ExportedImage
                     className=""
                     src="/images/void-combo-logo.png" 
                     alt="The Void Logo"
