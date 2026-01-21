@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/site/src/styles/modal.css"],"sourcesContent":["#modal-root {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 9999;\n  height: 100%;\n  overflow-y: scroll;\n  pointer-events: none;\n}\n\n.modal {\n  pointer-events: none;\n}\n\n.modal.active {\n  pointer-events: auto;\n}\n"],"names":[],"mappings":"AAAA;;;;;;;;;AAYA;;;;AAIA"}}]
-}

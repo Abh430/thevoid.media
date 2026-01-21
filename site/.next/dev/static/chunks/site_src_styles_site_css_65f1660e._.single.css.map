@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/site/src/styles/site.css"],"sourcesContent":[".active-scroll-spy {\n  font-weight: bolder;\n}\n\n.active-scroll-spy:before {\n  content: \"•\";\n  position: absolute;\n  top: 0;\n  left: -20px;\n}\n\n.navLink:active, .navLink:hover {\n  font-weight: bolder;\n}\n\n.navLink:active:before, .navLink:hover:before {\n  content: \"•\";\n  position: absolute;\n  top: 0;\n  left: -20px;\n}"],"names":[],"mappings":"AAAA;;;;AAIA;;;;;;;AAOA;;;;AAIA"}}]
-}

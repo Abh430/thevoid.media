@@ -1,20 +1,30 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/.pnp
+node_modules/
+.pnp
 .pnp.js
-.yarn/install-state.gz
 
 # testing
-/coverage
+coverage/
 
-# next.js
-/.next/
-/out/
+# next.js - ignore entire .next folder and all contents
+.next
+.next/**
+**/.next/
+**/.next/**
+.next/dev/**
+out/
+build/
+dist/
 
-# production
-/build
+# Next.js build output and TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Turbopack cache
+.turbo/
+.turbo-cache/
 
 # misc
 .DS_Store
@@ -33,10 +43,6 @@ pnpm-debug.log*
 # vercel
 .vercel
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-
 # IDE
 .vscode/
 .idea/
@@ -45,7 +51,6 @@ next-env.d.ts
 *~
 
 # OS
-.DS_Store
 Thumbs.db
 
 # Logs
@@ -67,3 +72,7 @@ logs
 # Yarn
 .yarn-integrity
 .pnp/
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
