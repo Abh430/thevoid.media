@@ -13,7 +13,7 @@ const emailAddress = "andrew@thevoid.media";
 const ContactPage = () => {
   return (
     <div id="contact" className="max-w-7xl mx-auto mt-10">
-      <div className="mb-20 sm:mb-10 px-8">
+      <div className="mb-20 sm:mb-10 px-2 md:px-8">
         <Fade cascade>
           <h2 className="text-zinc-50 py-2 text-2xl font-semibold">CONTACT</h2>
             <div className="w-full shrink-0 grow-0 basis-auto lg:w-ful">

@@ -1,4 +1,6 @@
 import React from "react"
+import Link from "next/link"
+import { useRouter } from "next/router"
 import ExportedImage from "next-image-export-optimizer"
 import {Fade} from "react-awesome-reveal"
 
@@ -9,19 +11,37 @@ interface HeaderColumnProps {
 }
 
 const HeaderColumn = ({headerRef}: HeaderColumnProps) => {
+  const router = useRouter();
+  
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // If we're on the home page, scroll to the anchor
+    if (router.pathname === '/') {
+      e.preventDefault();
+      const hash = href.split('#')[1];
+      const element = document.getElementById(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        // Update URL without page reload
+        router.push(href, undefined, { shallow: true, scroll: false });
+      }
+    }
+    // Otherwise, navigate to home page with anchor
+    // The default Link behavior will handle this
+  };
+
   return (
-        <header className="lg:sticky lg:top-0 mx-auto w-2/12 px-4 sm:px-6 lg:px-0 lg:pt-12 flex gap-10 flex-col align-middle max-h-screen">
-          <div className="text-center lg:text-left flex justify-center">
-              <a href="/">
+        <header className="sticky top-0 z-50 bg-zinc-900/95 backdrop-blur-sm mx-auto w-full lg:w-2/12 px-4 sm:px-6 lg:px-0 lg:pt-12 flex gap-4 lg:gap-10 flex-row lg:flex-col items-center lg:items-start justify-between lg:justify-start align-middle lg:max-h-screen">
+          <div className="text-center lg:text-left flex justify-center lg:justify-start">
+              <Link href="/">
                 <ExportedImage
-                    className=""
+                    className="max-w-[80px] max-h-[80px] lg:max-w-[150px] lg:max-h-[150px]"
                     src="/images/void-combo-logo-stacked.png" 
                     alt="The Void Logo"
                     width={200}
                     height={200}
-                    style={{ width: '200px', height: 'auto' }}
+                    style={{ width: 'auto', height: 'auto' }}
                   />
-              </a>
+              </Link>
               <h1 className="text-zinc-100 sr-only font-semibold">
                 THE VOID
               </h1>
@@ -31,21 +51,42 @@ const HeaderColumn = ({headerRef}: HeaderColumnProps) => {
             </div>
           </div>
 
-          <div className="lg:inset-y-0 lg:right-0 lg:w-1/2 my-4">
+          <div className="lg:inset-y-0 lg:right-0 lg:w-1/2 my-4 lg:my-4">
             {/* <img
               className="rounded-xl w-auto h-full object-cover flex justify-center"
               src={hero}
               alt=""
             ></img> */}
-            <ul id="navigation" ref={headerRef}>
+            <ul id="navigation" ref={headerRef} className="flex flex-row lg:flex-col gap-4 lg:gap-0">
               <li className="relative">
-                <a className="navLink" href="#about" data-to-scrollspy-id="about">ABOUT</a>
+                <Link 
+                  className="navLink" 
+                  href="/#about" 
+                  data-to-scrollspy-id="about"
+                  onClick={(e) => handleAnchorClick(e, '/#about')}
+                >
+                  ABOUT
+                </Link>
               </li>
               <li className="relative">
-                <a className="navLink" href="#work" data-to-scrollspy-id="work">WORK</a>
+                <Link 
+                  className="navLink" 
+                  href="/#work" 
+                  data-to-scrollspy-id="work"
+                  onClick={(e) => handleAnchorClick(e, '/#work')}
+                >
+                  WORK
+                </Link>
               </li>
               <li className="relative">
-                <a className="navLink" href="#contact" data-to-scrollspy-id="contact">CONTACT</a>
+                <Link 
+                  className="navLink" 
+                  href="/#contact" 
+                  data-to-scrollspy-id="contact"
+                  onClick={(e) => handleAnchorClick(e, '/#contact')}
+                >
+                  CONTACT
+                </Link>
               </li>
             </ul>
           </div>

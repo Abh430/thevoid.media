@@ -9,9 +9,6 @@ import { createPortal } from 'react-dom';
 import WorkSingleton from "../components/work/workSingleton"
 import { getWorkPageData, WorkItem } from "../components/work/workData";
 
-export const SEARCH_PAGE_PARAM = "page";
-export const WORK_PAGE_PARAM = "item";
-
 interface IndexPageProps {
   workItems: WorkItem[]
 }
@@ -20,28 +17,26 @@ const IndexPage = ({ workItems: initialWorkItems }: IndexPageProps) => {
 const router = useRouter()
 const workItems = initialWorkItems;
 const [modalIsVisible, setModalIsVisible] = useState(false);
-const [activeModalItem, setActiveModalItem] = useState(workItems[0] || null);
+const [activeModalItem, setActiveModalItem] = useState<WorkItem | null>(null);
 const bodyRef = useRef(null);
 const headerRef = useRef(null);
 
-function openModal(workItem) {
+// Open modal and update route
+function openModal(workItem: WorkItem) {
   setActiveModalItem(workItem);
   setModalIsVisible(true);
+  // Update URL without triggering navigation
+  window.history.pushState({}, '', workItem.path);
 }
 
+// Close modal and navigate back to home
 function closeModal() {
   setModalIsVisible(false);
-  const searchParams = new URLSearchParams(window.location.search);
-  const path = activeModalItem?.path.split("/").filter(Boolean) || [];
-  
-  searchParams.delete(WORK_PAGE_PARAM);
-  if (path[0]) {
-    searchParams.set(SEARCH_PAGE_PARAM, path[0]);
-  }
-  
-  router.push(`/?${searchParams.toString()}`, undefined, { shallow: true });
+  // Update URL without triggering navigation
+  window.history.pushState({}, '', '/');
 }
 
+// Handle modal visibility effects
 useEffect(() => {
   if(!document) return;
   document.body.style.overflowY = modalIsVisible ? "hidden" : "auto";
@@ -52,19 +47,7 @@ useEffect(() => {
     modalRoot.style.overflowY = modalIsVisible ? "scroll" : "hidden";
     modalRoot.scrollTop = 0;
   }
-  //update the browser history to include the path of the active modal item
-  if(modalIsVisible && activeModalItem) {
-    const searchParams = new URLSearchParams(window.location.search);
-    const path = activeModalItem.path.split("/").filter(Boolean);
-    
-    searchParams.set(WORK_PAGE_PARAM, path[1]);
-    searchParams.set(SEARCH_PAGE_PARAM, path[0]);
-
-    router.push(`/?${searchParams.toString()}`, undefined, { shallow: true });
-  }
-}, [modalIsVisible, activeModalItem, router]);
-
-
+}, [modalIsVisible]);
 
 function clickOutsideModal(e: MouseEvent) {
   const target = e.target as HTMLElement;
@@ -79,54 +62,50 @@ const handleEscape = (e: KeyboardEvent) => {
   }
 };
 
-//on mount/unmount. 
-//Listen for back/forward buttons to manage modal state
-//Open the modal on page load if the url contains a work page
-//Navigate to elementId if the url contains a page param
+// Sync modal state with route - handle browser back/forward buttons
 useEffect(() => {
   if(typeof window === 'undefined') return;
   
-  const searchParams = new URLSearchParams(window.location.search);
-  const pageParam = searchParams.get(SEARCH_PAGE_PARAM);
-  const workPageParam = searchParams.get(WORK_PAGE_PARAM);
-  const isWorkPage = !!workPageParam;
-
-  if(pageParam) {
-    const element = document.getElementById(pageParam);
-    if(element) {
-      element.scrollIntoView();
-    }
-  }
-  
-  if(isWorkPage && workItems.length) {
-    const foundItem = workItems.find(node => {
-      return node.path.includes(workPageParam || '');
-    });
-    if(foundItem) {
-      setActiveModalItem(foundItem);
-      setModalIsVisible(true);
-    }
-  }
-
-  //handler for back/forward buttons - use Next.js router events
-  const handleRouteChange = () => {
-    const searchParams = new URLSearchParams(window.location.search);
-    const workPageParam = searchParams.get(WORK_PAGE_PARAM);
-    const isWorkPage = !!workPageParam;
+  const syncModalWithRoute = () => {
+    const currentPath = window.location.pathname;
     
-    const newWorkItem = workItems.find(node => {
-      return node.path.includes(workPageParam || '');
-    });
-
-    if(isWorkPage && newWorkItem) {
-      setActiveModalItem(newWorkItem);
-      setModalIsVisible(true);
-    } else {
-      setModalIsVisible(false);
+    // Check if current route matches a work item path (and we're on the home page component)
+    if (router.pathname === '/' && currentPath.startsWith('/work/')) {
+      const slug = currentPath.split('/work/')[1].split('?')[0].split('#')[0];
+      const foundItem = workItems.find(item => item.slug === slug || item.path === currentPath);
+      
+      if(foundItem && (!modalIsVisible || activeModalItem?.slug !== foundItem.slug)) {
+        setActiveModalItem(foundItem);
+        setModalIsVisible(true);
+      }
+    } else if (currentPath === '/' || currentPath.startsWith('/#')) {
+      // If we're on the home page, close modal if it's open
+      if(modalIsVisible) {
+        setModalIsVisible(false);
+      }
+      
+      // Handle anchor scrolling
+      const hash = window.location.hash;
+      if(hash) {
+        const element = document.getElementById(hash.substring(1));
+        if(element) {
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }, 100);
+        }
+      }
     }
   };
   
-  router.events?.on('routeChangeComplete', handleRouteChange);
+  // Initial sync on mount
+  syncModalWithRoute();
+  
+  // Handle browser back/forward buttons
+  const handlePopState = () => {
+    syncModalWithRoute();
+  };
+  
+  window.addEventListener('popstate', handlePopState);
   
   const modalRoot = document.getElementById("modal-root");
   if(modalRoot) {
@@ -135,23 +114,24 @@ useEffect(() => {
   }
 
   return () => {
+    window.removeEventListener('popstate', handlePopState);
     if(modalRoot) {
       modalRoot.removeEventListener("click", clickOutsideModal);
       document.removeEventListener("keydown", handleEscape);
     }
-    router.events?.off('routeChangeComplete', handleRouteChange);
-  }
-}, [router, workItems]);
+  };
+}, [router.pathname, workItems, modalIsVisible, activeModalItem]);
 
-
-const Modal = ({ onClose, isVisible, workItem }) => {
+const Modal = ({ onClose, isVisible, workItem }: { onClose: () => void, isVisible: boolean, workItem: WorkItem | null }) => {
+  if (!workItem) return null;
+  
   return (
     <>
       <div className={"modal bg-zinc-800/80 p-12 " + (isVisible ? "visible active" : "invisible")}>
       <div className="max-w-6xl mx-auto modal-inner relative bg-zinc-950/90">
       <span className="modal-close float-right text-zinc-50 sticky ml-auto cursor-pointer px-3 py-1 rounded-full border-solid border top-6 right-8 mr-4 mt-4" onClick={() => onClose()}>X</span>
         <div className="py-16 px-20">
-          <WorkSingleton workItem={workItem} onClose={onClose} />
+          <WorkSingleton workItem={workItem} onClose={onClose} isModal={true} />
         </div>
         </div>
       </div>
@@ -159,8 +139,17 @@ const Modal = ({ onClose, isVisible, workItem }) => {
   );
 }
 
+  if (workItems.length === 0) {
+    return (
+      <>
+        <Seo title="The Void - Visual Media and Experience Designer" />
+        <div>Loading...</div>
+      </>
+    );
+  }
 
-  if (workItems.length === 0 || !activeModalItem) {
+  if (!activeModalItem && router.asPath.startsWith('/work/')) {
+    // Still loading work item
     return (
       <>
         <Seo title="The Void - Visual Media and Experience Designer" />
@@ -174,7 +163,7 @@ const Modal = ({ onClose, isVisible, workItem }) => {
       <Seo title="The Void - Visual Media and Experience Designer" />
       <div className="min-h-screen w-screen">
         <Layout hasFooter={false} hasNav={false}>
-            <div className="max-w-7xl mx-auto lg:px-6 md:px-3 relative box-border flex flex-row gap-7 justify-between" ref={bodyRef}>
+            <div className="max-w-7xl mx-auto lg:px-6 md:px-3 relative box-border flex flex-col lg:flex-row gap-7 justify-between" ref={bodyRef}>
               <Header headerRef={headerRef} />
               <Body headerRef={headerRef} bodyRef={bodyRef} workItems={workItems} openModal={openModal} />
             </div>

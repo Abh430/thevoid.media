@@ -58,11 +58,18 @@ const WorkGrid = ({ workItems, openModal, hasModal }: WorkGridProps) => {
 }
 
 const GridItemModal = ({workItem, children, openModal}: {workItem: WorkItem, children: React.ReactNode, openModal?: (workItem: WorkItem) => void}) => {
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (openModal) {
+      openModal(workItem);
+    }
+  };
+  
   return (
     <a 
       className="mb-8 block relative overflow-hidden ease-in-out duration-800 bg-gradient-to-r from-0% from-indigo-950 cursor-pointer" 
-      data-href={workItem.slug} 
-      onClick={() => openModal && openModal(workItem)}  
+      href={workItem.path}
+      onClick={handleClick}
     >
       {children}
     </a>
@@ -80,7 +87,7 @@ const GridItemLink = ({workItem, children}: {workItem: WorkItem, children: React
 const GridItem = ({workItem, children, openModal, hasModal}: {workItem: WorkItem, children: React.ReactNode, openModal?: (workItem: WorkItem) => void, hasModal: boolean}) => {
   return (
     <>
-    {hasModal ? 
+    {hasModal && openModal ? 
       <GridItemModal workItem={workItem} openModal={openModal}>
         {children}
       </GridItemModal>

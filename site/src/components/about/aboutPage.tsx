@@ -9,7 +9,7 @@ const AboutPage = () => {
           
         </div> */}
 
-      <div className="px-8 mb-20">
+      <div className="px-2 mb-20 md:px-8">  
         <Fade cascade>
           <h2 className="text-zinc-50 pt-2 pb-8 text-2xl font-semibold">ABOUT</h2>
         </Fade>
