@@ -127,10 +127,10 @@ const Modal = ({ onClose, isVisible, workItem }: { onClose: () => void, isVisibl
   
   return (
     <>
-      <div className={"modal bg-zinc-800/80 p-12 " + (isVisible ? "visible active" : "invisible")}>
+      <div className={"modal bg-zinc-800/80 p-2 md:p-12 " + (isVisible ? "visible active" : "invisible")}>
       <div className="max-w-6xl mx-auto modal-inner relative bg-zinc-950/90">
       <span className="modal-close float-right text-zinc-50 sticky ml-auto cursor-pointer px-3 py-1 rounded-full border-solid border top-6 right-8 mr-4 mt-4" onClick={() => onClose()}>X</span>
-        <div className="py-16 px-20">
+        <div className="p-4 md:py-16 md:px-20">
           <WorkSingleton workItem={workItem} onClose={onClose} isModal={true} />
         </div>
         </div>

@@ -6,8 +6,8 @@ const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false)
   return (
     <nav className="bg-transparent">
-      <div className="max-w-7xl mx-auto px-3 py-5 rounded-md">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-3 py-5 sm:py-6 rounded-md">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           <div className="w-full justify-between flex items-center">
             <Link
               className="text-white flex-shrink-0 font-montserrat font-semibold"
@@ -17,8 +17,8 @@ const Navbar = () => {
                     className=""
                     src="/images/void-combo-logo.png" 
                     alt="The Void Logo"
-                    width={200}
-                    height={60}
+                    width={250}
+                    height={250}
                     style={{ width: '200px', height: 'auto' }}
                   />
 

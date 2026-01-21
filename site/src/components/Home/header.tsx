@@ -30,15 +30,15 @@ const HeaderColumn = ({headerRef}: HeaderColumnProps) => {
   };
 
   return (
-        <header className="sticky top-0 z-50 bg-zinc-900/95 backdrop-blur-sm mx-auto w-full lg:w-2/12 px-4 sm:px-6 lg:px-0 lg:pt-12 flex gap-4 lg:gap-10 flex-row lg:flex-col items-center lg:items-start justify-between lg:justify-start align-middle lg:max-h-screen">
+        <header className="sticky top-0 z-50 bg-zinc-900/95 backdrop-blur-sm mx-auto w-full lg:w-2/12 py-5 sm:py-2 px-4 sm:px-6 lg:px-0 lg:pt-12 lg:pb-4 flex gap-4 lg:gap-10 flex-row lg:flex-col items-center lg:items-start justify-between lg:justify-start align-middle lg:max-h-screen">
           <div className="text-center lg:text-left flex justify-center lg:justify-start">
               <Link href="/">
                 <ExportedImage
-                    className="max-w-[80px] max-h-[80px] lg:max-w-[150px] lg:max-h-[150px]"
+                    className="max-w-[120px] max-h-[120px] lg:max-w-[180px] lg:max-h-[180px]"
                     src="/images/void-combo-logo-stacked.png" 
                     alt="The Void Logo"
-                    width={200}
-                    height={200}
+                    width={350}
+                    height={350}
                     style={{ width: 'auto', height: 'auto' }}
                   />
               </Link>
@@ -51,13 +51,13 @@ const HeaderColumn = ({headerRef}: HeaderColumnProps) => {
             </div>
           </div>
 
-          <div className="lg:inset-y-0 lg:right-0 lg:w-1/2 my-4 lg:my-4">
+          <div className="lg:inset-y-0 lg:right-0 lg:w-1/2 my-12 lg:my-8">
             {/* <img
               className="rounded-xl w-auto h-full object-cover flex justify-center"
               src={hero}
               alt=""
             ></img> */}
-            <ul id="navigation" ref={headerRef} className="flex flex-row lg:flex-col gap-4 lg:gap-0">
+            <ul id="navigation" ref={headerRef} className="flex flex-row lg:flex-col gap-6 lg:gap-0">
               <li className="relative">
                 <Link 
                   className="navLink" 
