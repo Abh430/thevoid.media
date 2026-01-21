@@ -1,0 +1,24 @@
+/* [project]/site/src/styles/site.css [client] (css) */
+.active-scroll-spy {
+  font-weight: bolder;
+}
+
+.active-scroll-spy:before {
+  content: "•";
+  position: absolute;
+  top: 0;
+  left: -20px;
+}
+
+.navLink:active, .navLink:hover {
+  font-weight: bolder;
+}
+
+.navLink:active:before, .navLink:hover:before {
+  content: "•";
+  position: absolute;
+  top: 0;
+  left: -20px;
+}
+
+/*# sourceMappingURL=site_src_styles_site_css_65f1660e._.single.css.map*/

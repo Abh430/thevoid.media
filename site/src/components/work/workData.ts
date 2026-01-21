@@ -1,8 +1,4 @@
-import { graphql, useStaticQuery } from "gatsby"
-//import gatsby image types
-//import { GatsbyImage } from "gatsby-plugin-image"
-// import { workQuery } from "../../pages/work"
-
+import { getAllWorkItems, getWorkItemBySlug } from "../../lib/data-loader"
 
 export interface WorkItem {
   title: string
@@ -20,7 +16,7 @@ export interface WorkItem {
 }
 
 export interface Image {
-  src: any
+  src: string
   alt: string
 }
 
@@ -31,59 +27,9 @@ export interface WorkSection {
   columns?: number
 }
 
-export const workQuery = graphql`
-query {
-  allWorkJson {
-    edges {
-      node {
-        content
-        externalLink
-        path: gatsbyPath(filePath: "/work/{workJson.title}")
-        sections {
-          content
-          columns
-          title
-          images {
-            src {
-              childImageSharp {
-                gatsbyImageData(
-                placeholder: BLURRED, 
-                formats: AUTO,) 
-              }
-            }
-            alt
-          }
-        }
-        position
-        slug
-        title
-        featuredImage {
-          src {
-            childImageSharp {
-              gatsbyImageData(
-              placeholder: BLURRED, 
-              formats: AUTO,
-              width: 1000,
-              )
-            }
-          }
-          alt
-        }
-        order
-        endDate
-        startDate
-      }
-    }
-  }
-  }
-`;
-
-export const sortWorkPageOrder = (data: WorkItem[]) => {
-  return data.map((edge: any) => edge.node).sort((a: WorkItem, b: WorkItem) => a.order - b.order);
+export function getWorkPageData(): WorkItem[] {
+  return getAllWorkItems() as WorkItem[]
 }
 
-export function getWorkPageData(){
-  const data = useStaticQuery(workQuery);
-  const work = sortWorkPageOrder(data.allWorkJson.edges);
-  return work;
-}
+// Re-export functions from data-loader for convenience
+export { getAllWorkItems, getWorkItemBySlug }

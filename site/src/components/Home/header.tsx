@@ -1,7 +1,6 @@
 import React from "react"
+import Image from "next/image"
 import {Fade} from "react-awesome-reveal"
-import { StaticImage } from "gatsby-plugin-image"
-import { navigate } from 'gatsby';
 
 interface HeaderColumnProps {
   activeItem?: string
@@ -14,16 +13,14 @@ const HeaderColumn = ({headerRef}: HeaderColumnProps) => {
         <header className="lg:sticky lg:top-0 mx-auto w-2/12 px-4 sm:px-6 lg:px-0 lg:pt-12 flex gap-10 flex-col align-middle max-h-screen">
           <div className="text-center lg:text-left flex justify-center">
               <a href="/">
-                <StaticImage style={{
-                      // gridArea: "1/1",
-                      // maxHeight: 600,
-                      width: '200px'
-                    }}
+                <Image
                     className=""
-                    src="../../images/void-combo-logo-stacked.png" 
-                    layout="fullWidth"
-                    formats={["auto", "webp", "avif"]}
-                    alt="The Void Logo" />
+                    src="/images/void-combo-logo-stacked.png" 
+                    alt="The Void Logo"
+                    width={200}
+                    height={200}
+                    style={{ width: '200px', height: 'auto' }}
+                  />
               </a>
               <h1 className="text-zinc-100 sr-only font-semibold">
                 THE VOID

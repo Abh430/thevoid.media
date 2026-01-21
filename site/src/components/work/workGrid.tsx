@@ -1,12 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "gatsby"
-
+import React from "react";
+import Link from "next/link"
 import { Fade } from "react-awesome-reveal"
-import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
-import { convertToBgImage } from "gbimage-bridge"
-import BackgroundImage from 'gatsby-background-image'
-
-// Types
+import { BackgroundImage } from "../BackgroundImage"
 import { WorkItem } from "./workData"
 
 interface WorkGridProps {
@@ -21,36 +16,36 @@ const WorkGrid = ({ workItems, openModal, hasModal }: WorkGridProps) => {
     <div className="grid-cols-3 grid-flow-row gap-4">
       {
         workItems.map((workItem, index) => {
-
-          const img = getImage(workItem.featuredImage.src.childImageSharp);
-          const bgImage = convertToBgImage(img);
+          // Resolve image path - handle both relative and absolute paths
+          const imageSrc = workItem.featuredImage?.src || '';
+          const resolvedImageSrc = imageSrc.startsWith('/') 
+            ? imageSrc 
+            : imageSrc.startsWith('../') 
+              ? imageSrc.replace('../', '/')
+              : `/img/${imageSrc}`;
           
           return (
               <Fade key={index} cascade>
                 <GridItem workItem={workItem} openModal={openModal} hasModal={hasModal} >
-                  
-                <BackgroundImage
-                  Tag="div"
-                  className=""
-                  style={{
-                    backgroundSize: '95%',
-                    backgroundPosition: 'right center'
-                  }}
-                  // fluid={bgImage?.fluid}
-                  // Spread bgImage into BackgroundImage:
-                  {...bgImage}
-                  preserveStackingContext
-                >
-                  <div key={index} className="grid-item col-span-3 p-5 bg-center transition backdrop-blur-none hover:backdrop-blur-lg bg-no-repeat h-40 flex flex-col flex-nowrap justify-center">
-                    <span className="block text-zinc-50 font-semibold grid-item__title">{workItem.title}</span>
-                    <span className="block text-zinc-200 text-xl">{workItem.position[0]}</span>
-                    <div className="block grid-item__description">
-                      <span>{workItem.startDate}</span> - <span>{workItem.endDate}</span>
-                    </div>
-                    
-                    <span className="block overflow-hidden grid-item__description">{workItem.content}</span>
+                  <BackgroundImage
+                    src={resolvedImageSrc}
+                    alt={workItem.featuredImage?.alt || workItem.title}
+                    className=""
+                    style={{
+                      backgroundSize: '95%',
+                      backgroundPosition: 'right center'
+                    }}
+                  >
+                    <div key={index} className="grid-item col-span-3 p-5 bg-center transition backdrop-blur-none hover:backdrop-blur-lg bg-no-repeat h-40 flex flex-col flex-nowrap justify-center">
+                      <span className="block text-zinc-50 font-semibold grid-item__title">{workItem.title}</span>
+                      <span className="block text-zinc-200 text-xl">{workItem.position?.[0]}</span>
+                      <div className="block grid-item__description">
+                        <span>{workItem.startDate}</span> - <span>{workItem.endDate}</span>
+                      </div>
+                      
+                      <span className="block overflow-hidden grid-item__description">{workItem.content}</span>
 
-                  </div>
+                    </div>
                   </BackgroundImage>
                 </GridItem>
               </Fade>
@@ -62,24 +57,27 @@ const WorkGrid = ({ workItems, openModal, hasModal }: WorkGridProps) => {
   )
 }
 
-const GridItemModal = ({workItem, children, openModal}) => {
+const GridItemModal = ({workItem, children, openModal}: {workItem: WorkItem, children: React.ReactNode, openModal?: (workItem: WorkItem) => void}) => {
   return (
-    <a className="mb-8 block relative overflow-hidden ease-in-out duration-800 bg-gradient-to-r from-0% from-indigo-950 cursor-pointer" data-href={workItem.slug} onClick={() => openModal(workItem)}  >
+    <a 
+      className="mb-8 block relative overflow-hidden ease-in-out duration-800 bg-gradient-to-r from-0% from-indigo-950 cursor-pointer" 
+      data-href={workItem.slug} 
+      onClick={() => openModal && openModal(workItem)}  
+    >
       {children}
     </a>
   )
 }
 
-
-const GridItemLink = ({workItem, children}) => {
+const GridItemLink = ({workItem, children}: {workItem: WorkItem, children: React.ReactNode}) => {
   return (
-    <Link className="mb-8 block relative overflow-hidden ease-in-out duration-800 bg-gradient-to-r from-0% from-indigo-950 cursor-pointer" to={workItem.path}  >
+    <Link className="mb-8 block relative overflow-hidden ease-in-out duration-800 bg-gradient-to-r from-0% from-indigo-950 cursor-pointer" href={workItem.path}  >
       {children}
     </Link>
   )
 }
 
-const GridItem = ({workItem, children, openModal, hasModal}) => {
+const GridItem = ({workItem, children, openModal, hasModal}: {workItem: WorkItem, children: React.ReactNode, openModal?: (workItem: WorkItem) => void, hasModal: boolean}) => {
   return (
     <>
     {hasModal ? 
@@ -93,8 +91,6 @@ const GridItem = ({workItem, children, openModal, hasModal}) => {
     }
     </>
   )
-
-
 }
 
 export default WorkGrid

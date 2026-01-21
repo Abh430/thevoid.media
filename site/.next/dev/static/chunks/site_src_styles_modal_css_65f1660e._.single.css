@@ -1,0 +1,19 @@
+/* [project]/site/src/styles/modal.css [client] (css) */
+#modal-root {
+  z-index: 9999;
+  pointer-events: none;
+  height: 100%;
+  position: fixed;
+  inset: 0;
+  overflow-y: scroll;
+}
+
+.modal {
+  pointer-events: none;
+}
+
+.modal.active {
+  pointer-events: auto;
+}
+
+/*# sourceMappingURL=site_src_styles_modal_css_65f1660e._.single.css.map*/

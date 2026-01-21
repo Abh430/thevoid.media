@@ -1,4 +1,4 @@
-import { Link } from "gatsby"
+import Link from "next/link"
 import React from "react"
 
 import { SocialMediaLinks, EmailContact } from "./contact/contactPage"
@@ -12,19 +12,19 @@ const Footer = () => {
             <div className="self-center xxs:hidden lg:block">
               <ul className="text-sm text-zinc-400 font-montserrat">
                 <li>
-                  <Link  className="text-sm text-zinc-400 font-montserrat" to="/about">About</Link>
+                  <Link  className="text-sm text-zinc-400 font-montserrat" href="/about">About</Link>
                 </li>
                 <li>
-                  <Link  className="text-sm text-zinc-400 font-montserrat" to="/work">Work</Link>
+                  <Link  className="text-sm text-zinc-400 font-montserrat" href="/work">Work</Link>
                 </li>
                 {/* <li>
-                  <Link to="/blog">Blog</Link>
+                  <Link href="/blog">Blog</Link>
                 </li> */}
                 {/* <li>
-                  <Link to="/blog">Store</Link>
+                  <Link href="/blog">Store</Link>
                 </li> */}
                 <li>
-                  <Link  className="text-sm text-zinc-400 font-montserrat" to="/contact">Contact</Link>
+                  <Link  className="text-sm text-zinc-400 font-montserrat" href="/contact">Contact</Link>
                 </li>
               </ul>
             </div>

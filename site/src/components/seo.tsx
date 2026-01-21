@@ -1,13 +1,9 @@
 /**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
+ * SEO component for Next.js using next/head
  */
 
 import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import Head from "next/head"
 import { useSiteMetadata } from "./hooks/use-site-metadata"
 
 const schema = {
@@ -30,8 +26,6 @@ interface SEOProps {
   customImage?: string
 }
 
-
-
 export const SEO = ({ title, description, pathname, customImage, children }: SEOProps) => {
   const { title: defaultTitle, description: defaultDescription, image, siteUrl, author } = useSiteMetadata()
 
@@ -45,7 +39,7 @@ export const SEO = ({ title, description, pathname, customImage, children }: SEO
   }
 
   return (
-    <>
+    <Head>
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
@@ -55,21 +49,21 @@ export const SEO = ({ title, description, pathname, customImage, children }: SEO
       <meta name="twitter:description" content={seo.description} />
       <meta name="twitter:image" content={seo.image} />
       <meta name="twitter:creator" content={seo.author} />
-      <meta name="og:url" content={seo.url} />
-      <meta name="og:description" content={seo.description} />
-      <meta name="og:title" content={seo.title} />
-      <meta name="og:image" content={seo.image} />
-      <meta name="og:locale" content="en_US" />
-      <meta name="og:type" content="website" />
+      <meta property="og:url" content={seo.url} />
+      <meta property="og:description" content={seo.description} />
+      <meta property="og:title" content={seo.title} />
+      <meta property="og:image" content={seo.image} />
+      <meta property="og:locale" content="en_US" />
+      <meta property="og:type" content="website" />
       <link rel="icon" href={seo.icon} />
       
-
-      <script type="application/ld+json">
-        {JSON.stringify(schema)}
-      </script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
 
       {children}
-    </>
+    </Head>
   )
 }
 

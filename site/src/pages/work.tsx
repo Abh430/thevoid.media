@@ -1,79 +1,33 @@
 import React from "react"
+import { GetStaticProps } from "next"
 import WorkPage from "../components/work/workPage"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { graphql } from "gatsby"
+import { getWorkPageData, WorkItem } from "../components/work/workData"
 
-import { sortWorkPageOrder } from "../components/work/workData"
+interface WorkProps {
+  workItems: WorkItem[]
+}
 
-const Work = (props) => {
-  const { data } = props;
-  // console.log(props, workQuery);
-  const workItems = sortWorkPageOrder(data.allWorkJson.edges);
+const Work = ({ workItems }: WorkProps) => {
   return (
-    <Layout>
-      <WorkPage workItems={workItems} hasModal={false}></WorkPage>
-    </Layout>
+    <>
+      <Seo title="The Void - Visual Media and Experience Designer" />
+      <Layout>
+        <WorkPage workItems={workItems} hasModal={false}></WorkPage>
+      </Layout>
+    </>
   )
 }
 
-
-export const Head = (props) => {
-
-  return (
-    <Seo
-      title="The Void - Visual Media and Experience Designer"
-    >
-    </Seo>
-  );
+export const getStaticProps: GetStaticProps<WorkProps> = async () => {
+  const workItems = getWorkPageData()
+  
+  return {
+    props: {
+      workItems,
+    },
+  }
 }
-
-export const workQuery = graphql`
-query {
-  allWorkJson {
-    edges {
-      node {
-        content
-        externalLink
-        path: gatsbyPath(filePath: "/work/{workJson.title}")
-        sections {
-          content
-          columns
-          title
-          images {
-            src {
-              childImageSharp {
-                gatsbyImageData(
-                placeholder: BLURRED, 
-                formats: AUTO,) 
-              }
-            }
-            alt
-          }
-        }
-        position
-        slug
-        title
-        featuredImage {
-          src {
-            childImageSharp {
-              gatsbyImageData(
-              placeholder: BLURRED, 
-              formats: AUTO,
-              width: 1000,
-              )
-            }
-          }
-          alt
-        }
-        order
-        endDate
-        startDate
-      }
-    }
-  }
-  }
-`;
-
 
 export default Work

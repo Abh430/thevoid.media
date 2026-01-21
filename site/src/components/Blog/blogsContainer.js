@@ -1,22 +1,20 @@
 import React from "react"
+import Link from "next/link"
+import Image from "next/image"
 import Input from "../Atoms/input"
 import Button from "../Atoms/button"
 import { Fade } from "react-awesome-reveal"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Link } from "gatsby"
 
-const BlogsContainer = ({ data }) => {
-  let posts = data?.map(item => {
-    return {
-      featuredimage: item.node.frontmatter.featuredimage,
-      title: item.node.frontmatter.title,
-      description: item.node.frontmatter.description,
-      slug: item.node.fields.slug,
+const BlogsContainer = ({ posts = [] }) => {
+  const resolveImagePath = (src) => {
+    if (!src) return '';
+    if (typeof src === 'string') {
+      if (src.startsWith('/')) return src;
+      if (src.startsWith('../')) return src.replace('../', '/');
+      return `/img/${src}`;
     }
-  })
-  console.log("Data ", data)
-  console.log("post", posts)
-  // const image = getImage(post.node.frontmatter.featuredimage)
+    return '';
+  };
 
   return (
     <div className="max-w-7xl mx-auto mt-10 px-8 text-black">
@@ -24,29 +22,30 @@ const BlogsContainer = ({ data }) => {
         <div className="grid grid-cols-3 gap-4 xxs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((blog, i) => (
             <div key={i}>
-              <div className="overflow-hidden  rounded-xl xxs:w-full ">
+              <div className="overflow-hidden rounded-xl xxs:w-full">
                 <Link
-                  to={blog.slug}
+                  href={blog.slug}
                   style={{
                     textDecoration: "none",
                     color: "black",
                   }}
                 >
-                  <GatsbyImage
-                    image={getImage(blog.featuredimage)}
-                    alt={blog.title}
-                    placeholder="none"
-                    layout="cover"
-                    formats={["auto", "webp", "avif"]}
-                    quality={100}
-                    // aspectRatio={16 / 9}
-                    className="img"
-                  />
+                  {blog.featuredimage && (
+                    <div style={{ position: 'relative', width: '100%', height: '300px' }}>
+                      <Image
+                        src={resolveImagePath(blog.featuredimage)}
+                        alt={blog.title}
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        className="img"
+                      />
+                    </div>
+                  )}
                 </Link>
               </div>
               <div className="m-6">
                 <Link
-                  to={blog.slug}
+                  href={blog.slug}
                   style={{
                     textDecoration: "none",
                     color: "black",
