@@ -83,7 +83,7 @@ const GridItemModal = ({workItem, children, openModal}: {workItem: WorkItem, chi
   
   return (
     <a 
-      className="group mb-8 block relative rounded-xl ease-in-out duration-800 bg-black/20 hover:bg-black/40 cursor-pointer" 
+      className="group mb-8 block relative rounded-xl ease-in-out duration-800 bg-black/20 hover:bg-black/40 cursor-pointer border-2 border-zinc-500" 
       href={workItem.path}
       onClick={handleClick}
     >
