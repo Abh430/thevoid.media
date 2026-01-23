@@ -18,7 +18,7 @@ const WorkPage = ({workItems, hasModal, openModal}: WorkPageProps) => {
           
         </div> */}
 
-      <div className="lg:mb-20 sm:mb-10 px-2 md:px-8">
+      <div className="lg:mb-20 sm:mb-10 mt-10">
         <Fade cascade>
           <h2 className="text-zinc-50 pt-2 pb-8 text-2xl font-semibold">WORK</h2>
         </Fade>

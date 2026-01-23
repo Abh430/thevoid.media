@@ -6,15 +6,19 @@ export const navItems = [
   { label: "ABOUT", href: "/#about", scrollId: "about" },
   { label: "WORK", href: "/#work", scrollId: "work" },
   { label: "CONTACT", href: "/#contact", scrollId: "contact" },
+  { label: "SHOP", href: "https://shop.thevoid.media", external: true },
+  { label: "MERCH", href: "https://merch.thevoid.media", external: true },
+  { label: "SUBSCRIBE", href: "https://patreon.thevoid.media", external: true },
 ]
 
 interface NavLinksProps {
   className?: string
   linkClassName?: string
   vertical?: boolean
+  onLinkClick?: () => void
 }
 
-export const NavLinks = ({ className = "", linkClassName = "", vertical = false }: NavLinksProps) => {
+export const NavLinks = ({ className = "", linkClassName = "", vertical = false, onLinkClick }: NavLinksProps) => {
   const router = useRouter()
 
   const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -29,8 +33,12 @@ export const NavLinks = ({ className = "", linkClassName = "", vertical = false 
         router.push(href, undefined, { shallow: true, scroll: false })
       }
     }
-    // Otherwise, navigate to home page with anchor
-    // The default Link behavior will handle this
+    // Call onLinkClick if provided (for closing mobile menu)
+    onLinkClick?.()
+  }
+
+  const handleExternalClick = () => {
+    onLinkClick?.()
   }
 
   const defaultLinkClass = "navLink"
@@ -38,15 +46,27 @@ export const NavLinks = ({ className = "", linkClassName = "", vertical = false 
   return (
     <ul className={`flex ${vertical ? 'flex-col gap-0' : 'flex-row gap-6'} ${className}`}>
       {navItems.map((item) => (
-        <li key={item.scrollId} className="relative">
-          <Link
-            className={linkClassName || defaultLinkClass}
-            href={item.href}
-            data-to-scrollspy-id={item.scrollId}
-            onClick={(e) => handleAnchorClick(e, item.href)}
-          >
-            {item.label}
-          </Link>
+        <li key={item.scrollId || item.label} className="relative">
+          {item.external ? (
+            <a
+              className={linkClassName || defaultLinkClass}
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleExternalClick}
+            >
+              {item.label}
+            </a>
+          ) : (
+            <Link
+              className={linkClassName || defaultLinkClass}
+              href={item.href}
+              data-to-scrollspy-id={item.scrollId}
+              onClick={(e) => handleAnchorClick(e, item.href)}
+            >
+              {item.label}
+            </Link>
+          )}
         </li>
       ))}
     </ul>

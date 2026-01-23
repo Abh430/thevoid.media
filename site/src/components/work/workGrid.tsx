@@ -94,7 +94,7 @@ const GridItemModal = ({workItem, children, openModal}: {workItem: WorkItem, chi
 
 const GridItemLink = ({workItem, children}: {workItem: WorkItem, children: React.ReactNode}) => {
   return (
-    <Link className="group mb-8 block relative rounded-xl ease-in-out duration-800 bg-gradient-to-r from-0% from-indigo-950 cursor-pointer" href={workItem.path}  >
+    <Link className="group mb-8 block relative rounded-xl ease-in-out duration-800 bg-black/20 hover:bg-black/40 cursor-pointer border-2 border-zinc-500" href={workItem.path}>
       {children}
     </Link>
   )
