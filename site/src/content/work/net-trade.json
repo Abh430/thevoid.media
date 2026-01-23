@@ -1,0 +1,45 @@
+{
+  "title": "Net Trade AVM",
+  "position": ["UX Designer", "UX Developer"],
+  "order": 1,
+  "startDate": "2025",
+  "content": "Designed an automated valuation model for a commercial real estate listing platform",
+  "sections": [
+    {
+      "title": "Project Overview",
+      "content": "Working with a commercial real estate professional and real estate data scientist, I designed a user facing AVM (automated valuation model) for users to manage their real estate portfolio as well as check valuations based on comparables. The project entailed both a user facing design, as well as engineering a data schema and ingestion pipeline.  The project ultimately was placed on hold due to lack of funding.",
+      "images": [
+        {
+          "src": "../../images/net-trade/net-trade-1.jpg",
+          "alt": "Net Trade AVM"
+        }
+      ]
+    },
+    {
+      "title": "Pro Forma Valuation Tool",
+      "content": "Each property has a valuation created based on a proprietary algorithm, with the primary inputs exposed to the user. Using the sliders, the user can tweak the valuation based on their own assumptions, and the entire page updates to reflect the users input.",
+      "columns": 1,
+      "images": [
+        {
+          "src": "../../images/net-trade/net-trade-3.jpg",
+          "alt": "Net Trade AVM"
+        }
+      ]
+
+    },
+    {
+      "title": "Comparables Valuation Tool",
+      "content": "For each property, a comparable properties list is generated based on over a dozen metrics. The user can choose to directly edit this list, or change the metrics used to generate the list itself. The tool gives users complex results delivered in a simple way, and the sliders offer an easy and intuitive means to adjust the list",
+      "images": [
+        {
+          "src": "../../images/net-trade/net-trade-2.jpg",
+          "alt": "Net Trade AVM"
+        }
+      ]
+    }
+  ],
+  "featuredImage": {
+    "src": "../../images/net-trade/net-trade-cover.jpg",
+    "alt": "Net Trade AVM Cover Image"
+  }
+}
