@@ -17,7 +17,7 @@ interface LayoutProps {
 
 const Layout = ({children, hasFooter = true, hasNav = true}: LayoutProps) => {
   return (
-    <div className="bg-zinc-900	box-border relative">
+    <div className="bg-zinc-900	box-border relative max-w-7xl mx-auto px-6 xl:px-0">
       {hasNav && <Navbar></Navbar>}
       {children}
       {hasFooter && <Footer></Footer>}
