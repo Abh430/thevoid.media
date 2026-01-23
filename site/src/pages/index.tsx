@@ -162,7 +162,7 @@ const Modal = ({ onClose, isVisible, workItem }: { onClose: () => void, isVisibl
     <>
       <Seo title="The Void - Visual Media and Experience Designer" />
       <div className="min-h-screen w-screen">
-        <Layout hasFooter={false} hasNav={false}>
+        <Layout hasFooter={true} hasNav={false}>
             <div className="relative box-border flex flex-col lg:flex-row gap-7 justify-between" ref={bodyRef}>
               <Header headerRef={headerRef} />
               <Body headerRef={headerRef} bodyRef={bodyRef} workItems={workItems} openModal={openModal} />

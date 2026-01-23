@@ -1,47 +1,102 @@
 import Link from "next/link"
 import React from "react"
-
-import { SocialMediaLinks, EmailContact } from "./contact/contactPage"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faInstagram, faFacebook, faGithub, faPatreon, faTiktok, faThreads } from '@fortawesome/free-brands-svg-icons'
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear()
+
+  const siteLinks = [
+    { label: "Home", href: "/" },
+    { label: "About", href: "/#about" },
+    { label: "Work", href: "/#work" },
+    { label: "Contact", href: "/#contact" },
+  ]
+
+  const externalLinks = [
+    { label: "Shop", href: "https://shop.thevoid.media" },
+    { label: "Merch", href: "https://merch.thevoid.media" },
+    { label: "Subscribe", href: "https://patreon.thevoid.media" },
+  ]
+
+  const socialLinks = [
+    { icon: faInstagram, href: "https://www.instagram.com/thevoid.media/", label: "Instagram" },
+    { icon: faFacebook, href: "https://www.facebook.com/TheVoidVisual", label: "Facebook" },
+    { icon: faTiktok, href: "https://www.tiktok.com/@thevoid.media", label: "TikTok" },
+    { icon: faThreads, href: "https://www.threads.net/@thevoid.media", label: "Threads" },
+    { icon: faGithub, href: "https://github.com/Abh430", label: "GitHub" },
+    { icon: faPatreon, href: "https://patreon.thevoid.media", label: "Patreon" },
+    { icon: faEnvelope, href: "mailto:andrew@thevoid.media", label: "Email" },
+  ]
+
   return (
-    <div className="m-4 border-t">
-      <div className="max-w-7xl mx-auto mt-10 h-auto lg:mb-8 sm:mb-4 xs:mb-4 xxs:mb-4">
-        <div className="footer pt-4 mt-4 rounded-xl">
-          <div className="grid grid-cols-2 xxs:grid-cols-1 lg:grid-cols-2">
-            <div className="self-center xxs:hidden lg:block">
-              <ul className="text-sm text-zinc-400 font-montserrat">
-                <li>
-                  <Link  className="text-sm text-zinc-400 font-montserrat" href="/about">About</Link>
+    <footer className="mt-16 border-t border-zinc-700">
+      <div className="max-w-7xl mx-auto py-4 px-2">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8">
+          {/* Site Navigation Column */}
+          <div>
+            <ul className="space-y-2">
+              {siteLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-zinc-400 hover:text-zinc-100 transition-colors duration-200 text-sm font-montserrat"
+                  >
+                    {link.label}
+                  </Link>
                 </li>
-                <li>
-                  <Link  className="text-sm text-zinc-400 font-montserrat" href="/work">Work</Link>
+              ))}
+            </ul>
+          </div>
+
+          {/* External Links Column */}
+          <div>
+            <ul className="space-y-2">
+              {externalLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-zinc-400 hover:text-zinc-100 transition-colors duration-200 text-sm font-montserrat"
+                  >
+                    {link.label}
+                  </a>
                 </li>
-                {/* <li>
-                  <Link href="/blog">Blog</Link>
-                </li> */}
-                {/* <li>
-                  <Link href="/blog">Store</Link>
-                </li> */}
-                <li>
-                  <Link  className="text-sm text-zinc-400 font-montserrat" href="/contact">Contact</Link>
-                </li>
-              </ul>
-            </div>
-            <div className="place-self-end">
-              <div className="flex justify-end mb-4">
-                <SocialMediaLinks />
-              </div>
-              <p className="text-white text-lg font-bold">
-                <span className="text-zinc-400 font-montserrat font-semibold mt-20">
-                  &copy; {new Date().getFullYear()} Void Media, LLC. All Rights Reserved.
-                </span>
-              </p>
+              ))}
+            </ul>
+          </div>
+
+          {/* Social Links Column */}
+          <div>
+            <div className="flex flex-wrap gap-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target={social.href.startsWith("mailto:") ? undefined : "_blank"}
+                  rel={social.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                  className="text-zinc-400 hover:text-zinc-100 transition-colors duration-200"
+                  aria-label={social.label}
+                  title={social.label}
+                >
+                  <FontAwesomeIcon icon={social.icon} size="lg" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
+
+        {/* Bottom Copyright Bar */}
+        <div className="pt-2 border-t border-zinc-800">
+          <p className="text-center text-zinc-500 text-xs font-montserrat">
+            &copy; {currentYear} Void Media, LLC. All Rights Reserved.
+          </p>
+        </div>
       </div>
-    </div>
+    </footer>
   )
 }
 

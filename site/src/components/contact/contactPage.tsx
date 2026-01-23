@@ -5,7 +5,7 @@ import Button from "../Atoms/button"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faInstagram, faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faInstagram, faFacebook, faGithub, faPatreon, faTiktok, faThreads } from '@fortawesome/free-brands-svg-icons'
 
 const emailAddress = "andrew@thevoid.media";
 
@@ -49,7 +49,7 @@ export const EmailContact = () => {
 
 export const SocialMediaLinks = () => {
   return (
-      <ul className="text-neutral-500 items-center flex">
+      <ul className="text-neutral-500 items-center flex flex-wrap">
         <li className="ml-4">
           <a target="_blank" href="https://www.instagram.com/thevoid.media/">
           <FontAwesomeIcon icon={faInstagram} size="2xl" />
@@ -61,8 +61,23 @@ export const SocialMediaLinks = () => {
           </a>
         </li>
         <li className="ml-4">
+          <a target="_blank" href="https://www.tiktok.com/@thevoid.media">
+          <FontAwesomeIcon icon={faTiktok} size="2xl" />
+          </a>
+        </li>
+        <li className="ml-4">
+          <a target="_blank" href="https://www.threads.net/@thevoid.media">
+          <FontAwesomeIcon icon={faThreads} size="2xl" />
+          </a>
+        </li>
+        <li className="ml-4">
           <a target="_blank" href="https://github.com/Abh430">
           <FontAwesomeIcon icon={faGithub} size="2xl" />
+          </a>
+        </li>
+        <li className="ml-4">
+          <a target="_blank" href="https://patreon.thevoid.media">
+          <FontAwesomeIcon icon={faPatreon} size="2xl" />
           </a>
         </li>
       </ul>
