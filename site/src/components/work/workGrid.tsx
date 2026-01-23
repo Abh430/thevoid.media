@@ -57,7 +57,7 @@ const WorkGrid = ({ workItems, openModal, hasModal }: WorkGridProps) => {
                       {/* Content that fades in after background slides */}
                       <div className="relative p-4 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300 delay-150">
                         <div className="text-zinc-200 text-sm">
-                          <span>{workItem.startDate}</span> - <span>{workItem.endDate}</span>
+                          <span>{workItem.startDate}</span> {!!workItem.endDate && <span>- {workItem.endDate}</span>}
                         </div>
                         <span className="block text-zinc-300 text-sm mt-1">{workItem.content}</span>
                       </div>
