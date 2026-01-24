@@ -18,7 +18,7 @@ const BlogsContainer = ({ posts = [] }) => {
 
   return (
     <div className="max-w-7xl mx-auto mt-10 px-8 text-black">
-      <Fade bottom cascade>
+      <Fade direction="up" cascade>
         <div className="grid grid-cols-3 gap-4 xxs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((blog, i) => (
             <div key={i}>

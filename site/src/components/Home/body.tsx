@@ -12,7 +12,7 @@ const MerchCTA = () => {
   return (
     <div className="max-w-7xl mx-auto mt-10 mb-20 px-2 md:px-8">
       <Fade>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <a 
             href="https://merch.thevoid.media" 
             target="_blank" 
@@ -43,7 +43,14 @@ const MerchCTA = () => {
   );
 };
 
-const BodyBlock = (props) => {
+interface BodyBlockProps {
+  openModal?: (workItem: any) => void;
+  headerRef?: React.RefObject<HTMLDivElement | null>;
+  bodyRef?: React.RefObject<HTMLDivElement | null>;
+  workItems?: any[];
+}
+
+const BodyBlock = (props: BodyBlockProps) => {
   const { openModal, headerRef, bodyRef } = props;
 
   return (

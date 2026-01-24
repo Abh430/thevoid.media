@@ -6,7 +6,7 @@ import { NavLinks } from "../navigation"
 interface HeaderColumnProps {
   activeItem?: string
   scrollPos?: number
-  headerRef: any
+  headerRef?: React.RefObject<HTMLDivElement | null>
 }
 
 const HeaderColumn = ({headerRef}: HeaderColumnProps) => {

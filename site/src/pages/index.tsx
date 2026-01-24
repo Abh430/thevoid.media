@@ -18,8 +18,8 @@ const router = useRouter()
 const workItems = initialWorkItems;
 const [modalIsVisible, setModalIsVisible] = useState(false);
 const [activeModalItem, setActiveModalItem] = useState<WorkItem | null>(null);
-const bodyRef = useRef(null);
-const headerRef = useRef(null);
+const bodyRef = useRef<HTMLDivElement>(null);
+const headerRef = useRef<HTMLDivElement>(null);
 
 // Open modal and update route
 function openModal(workItem: WorkItem) {

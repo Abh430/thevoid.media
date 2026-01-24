@@ -10,7 +10,7 @@ import { Fade } from "react-awesome-reveal"
 const FeatureSection = () => {
   return (
     <div className="max-w-7xl mx-auto">
-      <Fade bottom cascade>
+      <Fade direction="up" cascade>
         <div className="mt-10 flex flex-row justify-space xxs:flex-col xs:flex-col sm:flex-row content-center justify-center align-middle text-center">
           <div className="w-1/3 bg-gradient-to-r from-pink to-purple p-8 rounded-xl m-5 xxs:w-full xs:w-full sm:w-1/3">
             <h3 className="text-black text-2xl">Performance</h3>
@@ -91,7 +91,7 @@ const FeatureSection = () => {
         </div>
       </div>
 
-      <Fade bottom cascade>
+      <Fade direction="up" cascade>
         <div className="mt-10 flex flex-row justify-space xxs:flex-col xs:flex-col sm:flex-row">
           <div className="w-2/6 bg-gradient-to-r from-pink to-purple p-8 rounded-xl m-5 xxs:w-full xs:w-full sm:w-2/6">
             <span className="text-black font-semibold font-montserrat text-4xl">
@@ -185,7 +185,7 @@ const FeatureSection = () => {
         </div>
       </div>
 
-      <Fade bottom cascade>
+      <Fade direction="up" cascade>
         <div className="grid grid-cols-3 mt-10 gap-4 xxs:grid-cols-1 lg:grid-cols-3 px-5">
           <div className="rounded-xl overflow-hidden relative hover:opacity-100 flex justify-center">
             {/* <img alt="Image" src={Image1}></img> */}
@@ -199,7 +199,7 @@ const FeatureSection = () => {
         </div>
       </Fade>
 
-      <Fade bottom cascade>
+      <Fade direction="up" cascade>
         <div className="mt-10 flex flex-row justify-space xxs:flex-col xs:flex-col sm:flex-row content-center justify-center align-middle text-center">
           <div className="w-1/3 bg-gradient-to-r from-pink to-purple p-8 rounded-xl m-5 xxs:w-full xs:w-full sm:w-1/3">
             <h3 className="text-black text-2xl">v1.0.0</h3>

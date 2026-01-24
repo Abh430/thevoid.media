@@ -5,8 +5,6 @@ import ExportedImage from "next-image-export-optimizer"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import { getBlogPostBySlug, getAllBlogPosts } from "../../lib/data-loader"
-import LeftIcon from "../../images/left-icon.svg"
-import RightIcon from "../../images/right-icon.svg"
 
 interface BlogPostProps {
   post: {
@@ -128,7 +126,7 @@ const BlogPost = ({ post, previous, next }: BlogPostProps) => {
                       }}
                       className="text-base"
                     >
-                      <Image src={LeftIcon} alt="LeftIcon" width={30} height={30} />
+                      <ExportedImage src="/images/left-icon.svg" alt="Previous" width={30} height={30} />
                       <span>
                         {previous.frontmatter.title?.length > 30
                           ? previous.frontmatter.title.slice(0, 30) + "..."
@@ -153,7 +151,7 @@ const BlogPost = ({ post, previous, next }: BlogPostProps) => {
                           ? next.frontmatter.title.slice(0, 30) + "..."
                           : next.frontmatter.title}
                       </span>
-                      <ExportedImage src={RightIcon} alt="RightIcon" width={30} height={30} />
+                      <ExportedImage src="/images/right-icon.svg" alt="Next" width={30} height={30} />
                     </Link>
                   )}
                 </div>
@@ -181,7 +179,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps<BlogPostProps> = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = params?.slug as string
   const posts = await getAllBlogPosts()
   const postIndex = posts.findIndex(p => p.slug === `/${slug}` || p.slug === slug)
@@ -201,7 +199,7 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({ params }) 
       post,
       previous: previous || undefined,
       next: next || undefined,
-    },
+    } as unknown as BlogPostProps,
   }
 }
 
