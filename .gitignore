@@ -18,6 +18,9 @@ out/
 build/
 dist/
 
+# next-image-export-optimizer generated images
+**/nextImageExportOptimizer/
+
 # Next.js build output and TypeScript
 *.tsbuildinfo
 next-env.d.ts
