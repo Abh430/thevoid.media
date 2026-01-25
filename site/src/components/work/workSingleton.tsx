@@ -10,6 +10,14 @@ interface WorkSingletonProps {
   isModal?: boolean
 }
 
+// Mapping for grid columns - Tailwind needs full class names at build time
+const gridColsMap: Record<number, string> = {
+  1: 'xl:grid-cols-1',
+  2: 'xl:grid-cols-2',
+  3: 'xl:grid-cols-3',
+  4: 'xl:grid-cols-4',
+};
+
 const WorkSingleton = ({ workItem, onClose, isModal = false }: WorkSingletonProps) => {
   if(!workItem) return null;
 
@@ -55,7 +63,7 @@ const WorkSingleton = ({ workItem, onClose, isModal = false }: WorkSingletonProp
                 <section className="mt-12" key={index}>
                   <h2 className="text-zinc-100 py-2 text-xl font-semibold">{section.title}</h2>
                   <p className="text-zinc-300">{section.content}</p>
-                  <div className={`grid xl:gap-4 ${section.columns ? `xl:grid-cols-${section.columns}` : 'xl:grid-cols-1'}`}>
+                  <div className={`grid xl:gap-4 ${gridColsMap[section.columns ?? 1]}`}>
                     {
                       section.images &&
                       section.images.map((image, imgIndex) => {
