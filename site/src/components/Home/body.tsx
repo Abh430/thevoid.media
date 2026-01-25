@@ -10,7 +10,7 @@ import ScrollSpy from "react-ui-scrollspy";
 
 const MerchCTA = () => {
   return (
-    <div className="max-w-7xl mx-auto mt-10 mb-20 px-2 md:px-8">
+    <div className="max-w-7xl mx-auto mt-10 mb-0 px-0 md:px-0">
       <Fade>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <a 

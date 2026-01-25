@@ -13,7 +13,7 @@ const emailAddress = "andrew@thevoid.media";
 const ContactPage = () => {
   return (
     <div id="contact" className="max-w-7xl mx-auto mt-10">
-      <div className="mb-20 sm:mb-10 px-2 md:px-8">
+      <div className="mb-20 sm:mb-10 px-2 md:px-0">
         <Fade cascade>
           <h2 className="text-zinc-50 py-2 text-2xl font-semibold">CONTACT</h2>
             <div className="w-full shrink-0 grow-0 basis-auto lg:w-ful">
@@ -50,7 +50,7 @@ export const EmailContact = () => {
 export const SocialMediaLinks = () => {
   return (
       <ul className="text-neutral-500 items-center flex flex-wrap">
-        <li className="ml-4">
+        <li className="ml-0">
           <a target="_blank" href="https://www.instagram.com/thevoid.media/">
           <FontAwesomeIcon icon={faInstagram} size="2xl" />
           </a>
