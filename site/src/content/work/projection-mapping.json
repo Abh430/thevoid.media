@@ -8,29 +8,28 @@
   "sections": [
     {
       "title": "Overview",
-      "content": "I have had the opportunity to create content and projection map large scale buildings for both live music productions and corporate clients. With projection mapping, every project brings a very different set of challenges; ambient light, projector placements (avoiding things like shadows) or hard to work with structural elements to name a few. When working on a projection mapping project, my primary motivator is transforming the space into something the viewers would never expect. Whether its using “invisible” lights, adding structural elements, or simply adding abstract design to highlight different areas, every project is approached with the unique space and facade in mind."
-
+      "content": "I have had the opportunity to create content and projection map large scale buildings for both live music productions and corporate clients. With projection mapping, every project brings a very different set of challenges: ambient light, projector placements (avoiding things like shadows) or hard to work with structural elements, to name a few. When working on a projection mapping project, my primary motivator is transforming the space into something the viewers would never expect. Whether it’s using “invisible” lights, adding structural elements, or simply adding abstract design to highlight different areas, every project is approached with the unique space and facade in mind."
     },
     {
       "title": "Orion Amphitheater",
-      "content": "I was the Lead Artist, Video Operator (VJ) and Creative Director behind one night of Tipper’s 3 night retirement show  at the Orion Amphitheater in Huntsville, Alabama. Without any preview of the music that would be performed, I was tasked with creating a full 75 minute show that incorporated projection mapping of the entire facade as well as a large center screen. The entire projection surface was over 250 feet wide, utilizing six 40k lumen projectors. Using a mixture of pre-rendered and generative sources, I worked with Theron Pray to mix content in real-time on the facade and the center screen, live to the music.",
+      "content": "I was the Lead Artist, Video Operator (VJ) and Creative Director behind one night of Tipper’s 3 night retirement show at the Orion Amphitheater in Huntsville, Alabama. Without any preview of the music that would be performed, I was tasked with creating a full 75 minute show that incorporated projection mapping of the entire facade as well as a large center-screen. The entire projection surface was over 250 feet wide, utilizing six 40k lumen projectors which were placed and mapped by Eric Mintzer (Imaginex). Using a mixture of pre-rendered and generative sources, I worked with Theron Pray to mix content in real-time on the facade and the center-screen, live to the music.",
       "columns": 1,
       "images": [
         {
           "src": "../../images/projection-mapping/orion/mapping1.jpg",
-          "alt": "Editor overview"
+          "alt": "Orion Amphitheater during Tipper's final projection mapped show"
         },
         {
           "src": "../../images/projection-mapping/orion/mapping2.jpg",
-          "alt": "Advanced options"
+          "alt": "Orion Amphitheater during Tipper's final projection mapped show"
         },
         {
           "src": "../../images/projection-mapping/orion/mapping3.jpg",
-          "alt": "Side by side view"
+          "alt": "Orion Amphitheater during Tipper's final projection mapped show"
         },
         {
           "src": "../../images/projection-mapping/orion/mapping4.jpg",
-          "alt": "Configuration panel"
+          "alt": "Orion Amphitheater during Tipper's final projection mapped show"
         }
       ]
     },
@@ -41,42 +40,42 @@
       "images": [
         { 
           "src": "../../images/projection-mapping/bizzell/bizzell-mapping1.jpg",
-          "alt": "Marketplace Homepage"
+          "alt": "The Bizzell Library during the Holiday projection mapped show"
         },
         {
           "src": "../../images/projection-mapping/bizzell/bizzell-mapping2.jpg",
-          "alt": "Marketplace Browse Page"
+          "alt": "The Bizzell Library during the Holiday projection mapped show"
         },
         {
           "src": "../../images/projection-mapping/bizzell/bizzell-mapping3.jpg",
-          "alt": "Marketplace Built in app scene preview side by side"
+          "alt": "The Bizzell Library during the Holiday projection mapped show"
         },
         {
           "src": "../../images/projection-mapping/bizzell/bizzell-mapping4.jpg",
-          "alt": "Marketplace Built in app scene preview side by side"
+          "alt": "The Bizzell Library during the Holiday projection mapped show"
         },
         {
           "src": "../../images/projection-mapping/bizzell/bizzell-mapping5.jpg",
-          "alt": "Marketplace Built in app scene preview side by side"
+          "alt": "The Bizzell Library during the Holiday projection mapped show"
         }
       ]
     },
     {
       "title": "Spirit of Suwannee Music Park & The Gorge Amphitheater",
-      "content": "On two different occasions, I was granted the opportunity to projection map a beautifully designed stage piece by TAS visuals. The stage was expertly fabricated and painted by Hoodie Salinas and his team Given the output map very early in the planning process provided for a rare opportunity to make ample content that fit the stage. Additionally, the proximity of the stage piece to a lower LED wall offered a unique chance to either separate the elements with two distinct visuals, or to unify them and create one cohesive shape.",
+      "content": "On two different occasions, I was granted the opportunity to projection map a beautifully designed stage piece by TAS visuals. The stage was expertly fabricated and painted by Hoodie Salinas and his team. I was given the output map very early in the planning process, which provided a rare opportunity to make ample content that fit the stage. Additionally, the proximity of the stage piece to a lower LED wall offered a unique chance to either separate the elements with two distinct visuals, or to unify them and create one cohesive shape.",
       "columns": 1,
       "images": [
         { 
           "src": "../../images/projection-mapping/suwanne-gorge/gorge1.jpg",
-          "alt": "Marketplace Homepage"
+          "alt": "The Gorge Amphitheater"
         },
         {
           "src": "../../images/projection-mapping/suwanne-gorge/gorge2.jpg",
-          "alt": "Marketplace Browse Page"
+          "alt": "The Gorge Amphitheater"
         },
         {
           "src": "../../images/projection-mapping/suwanne-gorge/suwannee.jpg",
-          "alt": "Marketplace Built in app scene preview side by side"
+          "alt": "Spirit of Suwannee Music Park"
         }
       ]
     },
@@ -87,19 +86,19 @@
       "images": [
         { 
           "src": "../../images/projection-mapping/infra/infrasound1.png",
-          "alt": "Marketplace Homepage"
+          "alt": "Infrasound"
         },
         {
           "src": "../../images/projection-mapping/infra/infrasound2.png",
-          "alt": "Marketplace Browse Page"
+          "alt": "Infrasound"
         },
         {
           "src": "../../images/projection-mapping/infra/infrasound3.png",
-          "alt": "Marketplace Built in app scene preview side by side"
+          "alt": "Infrasound"
         },
         {
           "src": "../../images/projection-mapping/infra/infrasound4.png",
-          "alt": "Marketplace Built in app scene preview side by side"
+          "alt": "Infrasound"
         }
       ]
     },
@@ -110,7 +109,7 @@
       "images": [
         { 
           "src": "../../images/projection-mapping/echomountain.jpg",
-          "alt": "Marketplace Homepage"
+          "alt": "Echo Mountain"
         }
       ]
     }

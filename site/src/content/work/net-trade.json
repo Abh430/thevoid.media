@@ -7,7 +7,7 @@
   "sections": [
     {
       "title": "Project Overview",
-      "content": "Working with a commercial real estate professional and real estate data scientist, I designed a user facing AVM (automated valuation model) for users to manage their real estate portfolio as well as check valuations based on comparables. The project entailed both a user facing design, as well as engineering a data schema and ingestion pipeline.  The project ultimately was placed on hold due to lack of funding.",
+      "content": "Working with a commercial real estate professional and real estate data scientist, I designed a user facing automated valuation model (AVM) for users to manage their real estate portfolio as well as check valuations based on comparables. The project entailed both a user-facing design, as well as engineering a data schema and ingestion pipeline. The primary goal was to create an automated valuation tool for commercial real estate owners to manage their properties, and generate revenue reports on triple net leases.",
       "images": [
         {
           "src": "../../images/net-trade/net-trade-1.jpg",
@@ -17,7 +17,7 @@
     },
     {
       "title": "Pro Forma Valuation Tool",
-      "content": "Each property has a valuation created based on a proprietary algorithm, with the primary inputs exposed to the user. Using the sliders, the user can tweak the valuation based on their own assumptions, and the entire page updates to reflect the users input.",
+      "content": "Each property has a valuation created based on a proprietary algorithm, with the primary inputs exposed to the user. Using the sliders, the user can tweak the valuation based on their own assumptions, and the entire page updates to reflect the input.",
       "columns": 1,
       "images": [
         {
@@ -29,7 +29,7 @@
     },
     {
       "title": "Comparables Valuation Tool",
-      "content": "For each property, a comparable properties list is generated based on over a dozen metrics. The user can choose to directly edit this list, or change the metrics used to generate the list itself. The tool gives users complex results delivered in a simple way, and the sliders offer an easy and intuitive means to adjust the list",
+      "content": "For each property, a comparable properties list is generated based on over a dozen metrics. The user can choose to directly edit this list or change the metrics used to generate the list itself. The tool gives users complex results delivered in a simple way and the sliders offer an easy and intuitive means to adjust the list.",
       "images": [
         {
           "src": "../../images/net-trade/net-trade-2.jpg",
